@@ -7,6 +7,9 @@ import WhatWeStandFor from "./WhatWeStandFor";
 import Apparel from "./components/Apparel";
 import Taggbox from "./components/Taggbox";
 
+// Define once at the top (optional, clean)
+const API_BASE = "https://dcwst.onrender.com";
+
 export default function App() {
   //
   // 1) Admin login/logout in the parent
@@ -31,17 +34,11 @@ export default function App() {
 
   // <-- ADDED: Fetch surfers from server on mount, override local if server has data
   useEffect(() => {
-    fetch("/api/surfers")
-      .then((res) => res.json())
-      .then((serverSurfers) => {
-        if (serverSurfers && serverSurfers.length > 0) {
-          setSurfers(serverSurfers);
-        }
-      })
-      .catch((err) =>
-        console.error("Error fetching surfers from server:", err)
-      );
-  }, []);
+  fetch(`${API_BASE}/api/surfers`)
+    .then((res) => res.json())
+    .then((data) => setSurfers(data))
+    .catch((err) => console.error("Error fetching surfers:", err));
+}, []);
 
   // Attempt to log in with a password
   const handleAdminLogin = (password) => {
@@ -60,71 +57,54 @@ export default function App() {
   };
 
   // Add surfer
-  const addSurfer = () => {
-    if (!newSurfer.name.trim()) return;
-    const newId = Date.now();
-    const surferToAdd = { id: newId, ...newSurfer };
+const addSurfer = () => {
+  if (!newSurfer.name.trim()) return;
+  const newId = Date.now();
+  const surferToAdd = { id: newId, ...newSurfer };
 
-    // 1) Local update
-    setSurfers((prev) => [...prev, surferToAdd]);
+  // Optimistic local update
+  setSurfers((prev) => [...prev, surferToAdd]);
 
-    // 2) Server update
-    fetch("/api/surfers", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(surferToAdd),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setSurfers(data.surfers); // ✅ actually update local surfers from server
-      })
-      .catch((err) => console.error("Error adding surfer on server:", err));
+  // Server update
+  fetch(`${API_BASE}/api/surfers`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(surferToAdd),
+  })
+    .then((res) => res.json())
+    .then((data) => setSurfers(data.surfers))
+    .catch((err) => console.error("Add error:", err));
 
-    // Reset form
-    setNewSurfer({ name: "", country: "", points: 0, image: "" });
-  };
+  setNewSurfer({ name: "", country: "", points: 0, image: "" });
+};
 
-  // Remove surfer
-  const removeSurfer = (idToRemove) => {
-    // 1) Local removal
-    setSurfers((prev) => prev.filter((s) => s.id !== idToRemove));
+// Remove surfer
+const removeSurfer = (idToRemove) => {
+  setSurfers((prev) => prev.filter((s) => s.id !== idToRemove));
 
-    // <-- ADDED: Also DELETE on server
-    fetch(`/api/surfers/${idToRemove}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setSurfers(data.surfers); // ✅ refresh surfers from server
-      })
+  fetch(`${API_BASE}/api/surfers/${idToRemove}`, {
+    method: "DELETE",
+  })
+    .then((res) => res.json())
+    .then((data) => setSurfers(data.surfers))
+    .catch((err) => console.error("Delete error:", err));
+};
 
-      .catch((err) => console.error("Error removing surfer on server:", err));
-  };
+// Update points
+const updateSurferPoints = (id, newPoints) => {
+  setSurfers((prev) =>
+    prev.map((s) => (s.id === id ? { ...s, points: newPoints } : s))
+  );
 
-  // Update surfer points (for editing scores in Leaderboard)
-  const updateSurferPoints = (id, newPoints) => {
-    // 1) Local update
-    setSurfers((prevSurfers) =>
-      prevSurfers.map((surfer) =>
-        surfer.id === id ? { ...surfer, points: newPoints } : surfer
-      )
-    );
-
-    // <-- ADDED: Also PUT to server
-    fetch(`/api/surfers/${id}/points`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ points: newPoints }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setSurfers(data.surfers); // ✅ refresh surfers from server
-      })
-
-      .catch((err) =>
-        console.error("Error updating surfer points on server:", err)
-      );
-  };
+  fetch(`${API_BASE}/api/surfers/${id}/points`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ points: newPoints }),
+  })
+    .then((res) => res.json())
+    .then((data) => setSurfers(data.surfers))
+    .catch((err) => console.error("Update error:", err));
+};
 
   //
   // 3) Return your full layout

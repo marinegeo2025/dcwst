@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Ensure responsive scaling on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Daisy's Cold Water Surf Team</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Daisy's Cold Water Surf Team" />
+    <meta
+      property="og:description"
+      content="Decentralized | Underground | Surfing"
+    />
+    <meta property="og:image" content="https://i.imgur.com/wRhH3US.png" />
+    <meta property="og:url" content="https://daisyscoldwatersurfteam.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Daisy's Cold Water Surf Team" />
+    <meta
+      name="twitter:description"
+      content="Decentralized | Underground | Surfing"
+    />
+    <meta name="twitter:image" content="https://i.imgur.com/wRhH3US.png" />
+
+    <!-- Google Font Link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "373277789761524");
+      fbq("track", "PageView");
+    </script>
+    <!-- End Meta Pixel Code -->
+  </head>
+  <body class="bg-black text-white font-sans" style="margin: 0">
+  
+  <!-- React App -->
+  <div id="root"></div>
+
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display: none"
+      src="https://www.facebook.com/tr?id=373277789761524&ev=PageView&noscript=1"
+    />
+  </noscript>
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+/* Background ocean gradient + soft background bubbles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #001f3f, #0074D9);
+  overflow-x: hidden;
+  color: white;
+  position: relative;
+}
+
+/* Background bubbles (static) */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 2%, transparent 20%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 2%, transparent 20%),
+              radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 2%, transparent 20%);
+  background-size: 50% 50%;
+  animation: floatBubbles 60s infinite linear;
+  z-index: -1;
+}
+
+/* Floating bubble background animation */
+@keyframes floatBubbles {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-5%) translateX(2%);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Randomly generated bubble style */
+.bubble {
+  position: fixed;
+  bottom: -50px;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  animation: bubbleUp 5s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Bubbles float up */
+@keyframes bubbleUp {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateY(-110vh) translateX(-10px);
+    opacity: 0;
+  }
+}
+
+/* Content container */
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Headings */
+h1, h2 {
+  text-align: center;
+  color: #c084fc;
+  animation: fadeIn 2s ease-out forwards;
+}
+
+/* Section fade-in */
+section {
+  margin-top: 2rem;
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Buy Now Button pulse */
+.buy-now {
+  background-color: #c084fc;
+  color: black;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  transition: background-color 0.3s;
+  margin: 1.5rem auto;
+  display: block;
+}
+
+.buy-now:hover {
+  background-color: #a855f7;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Gentle floating bob for icons or headings */
+.gentle-float {
+  animation: floaty 4s ease-in-out infinite alternate;
+}
+
+@keyframes floaty {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+/* Features list */
+.features {
+  margin-top: 2rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.features li {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.features li::before {
+  content: "✨ ";
+  color: #c084fc;
+}
+
+/* Link styling */
+a {
+  color: #c084fc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+

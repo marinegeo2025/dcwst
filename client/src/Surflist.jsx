@@ -65,7 +65,7 @@ export default function Surflist({ isAdmin, onAdminLogin, onAdminLogout }) {
       className="bg-black text-white px-6 py-12 max-w-4xl mx-auto text-center"
     >
       <h2 className="text-3xl font-bold mb-6">
-        🌊 Surflist: Buy, Sell & Trade
+        🌊 Surflist: Buy, Sell and Trade
       </h2>
 
       {/* Add Listing Form */}

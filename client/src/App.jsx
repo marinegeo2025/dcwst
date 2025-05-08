@@ -6,6 +6,7 @@ import Leaderboard from "./components/Leaderboard";
 import WhatWeStandFor from "./WhatWeStandFor";
 import Apparel from "./components/Apparel";
 import Taggbox from "./components/Taggbox";
+import { Analytics } from '@vercel/analytics/react';
 
 // Define once at the top (optional, clean)
 const API_BASE = "https://dcwst.onrender.com";
@@ -320,6 +321,7 @@ const updateSurferPoints = (id, newPoints) => {
         © 2025 Daisy’s Cold Water Surf Team. Decentralized. Underground.
         Surfing.
       </footer>
+     <Analytics />
     </div>
   );
 }

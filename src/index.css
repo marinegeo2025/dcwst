@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: add your own vibe */
+body {
+  @apply bg-black text-white font-sans;
+}
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out both;
+}
+
+.delay-100 {
+  animation-delay: 0.2s;
+}
+
+.delay-200 {
+  animation-delay: 0.4s;
+}
+
+/* Optional: a slow-moving animated background gradient */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #0f172a);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px 3px rgba(0,212,255,0.3);
+  }
+  50% {
+    box-shadow: 0 0 60px 20px rgba(0,212,255,0.9);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+@keyframes pro-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 15px 10px rgba(56, 189, 248, 0.2);
+  }
+}
+
+.pro-pulse {
+  animation: pro-pulse 2s infinite;
+}
+@keyframes pulse-soft {
+  0%, 100% {
+    box-shadow: 0 0 8px 2px rgba(56, 189, 248, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px 6px rgba(56, 189, 248, 0.7);
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+@keyframes marquee {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.marquee {
+  white-space: nowrap;
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}

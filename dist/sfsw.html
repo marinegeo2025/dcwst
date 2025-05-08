@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soul Fire Surf Wax - Cold Water Wax</title>
+
+  <!-- Open Graph / Meta -->
+  <meta name="description" content="Soul Fire Surf Wax - Hardcore Scottish surf wax for cold water warriors. Grit. Grip. Glory.">
+  <meta property="og:title" content="Soul Fire Surf Wax">
+  <meta property="og:description" content="Hardcore Scottish surf wax for cold water warriors. Grit. Grip. Glory.">
+  <meta property="og:image" content="https://i.imgur.com/95UoE7j.jpeg">
+  <meta property="og:url" content="https://yourdomain.com/sfsw.html">
+
+  <style>
+    /* Basic Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0; 
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(160deg, #000000 0%, #1F1F2E 100%);
+      color: #fff;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    h1, h2, h3 {
+      color: #D100FF; /* strong purple */
+      text-shadow: 0 0 10px rgba(209, 0, 255, 0.6);
+    }
+
+    /* Two-column top layout */
+    .top-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .top-left {
+      flex: 1 1 350px;
+      max-width: 400px;
+    }
+
+    .top-left img.main-image {
+      width: 100%;
+      border: 2px solid #D100FF;
+      border-radius: 6px;
+    }
+
+    .thumb-gallery {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .thumb-gallery img {
+      width: 75px; 
+      height: 75px; 
+      object-fit: cover;
+      border: 2px solid #D100FF;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .thumb-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .top-right {
+      flex: 1 1 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    /* Main headings on right */
+    .top-right h1 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .subheading {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Price text */
+    .price {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Large Buy button in a complementary color (hot magenta/red) */
+    .buy-now {
+      display: inline-block;
+      background-color: #FF0055; /* complementary “hot magenta/red” */
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      margin: 1rem 0;
+      box-shadow: 0 0 10px rgba(255, 0, 85, 0.4);
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .buy-now:hover {
+      background-color: #e6004c;
+      transform: scale(1.05);
+    }
+
+    .intro-text {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Mid/Lower sections (Why Choose, How to Use, Shipping) */
+    section {
+      margin-bottom: 2rem;
+    }
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .features {
+      margin-top: 1rem;
+      list-style: none;
+      padding-left: 0;
+    }
+    .features li {
+      margin-bottom: 0.5rem;
+    }
+    .features li::before {
+      content: "⚡ "; 
+      color: #D100FF;
+    }
+
+    /* Numbered instructions (How to Use) */
+    ol.instructions {
+      margin-top: 1rem;
+      margin-left: 1.5rem;
+    }
+    ol.instructions li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Large Gallery at bottom (if desired) */
+    .large-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .large-gallery img {
+      max-width: 200px;
+      border: 2px solid #D100FF;
+      border-radius: 6px;
+      transition: transform 0.3s;
+    }
+    .large-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Top Section with 2 columns -->
+  <div class="top-section">
+    <!-- Left column (Main product image + small thumbs) -->
+    <div class="top-left">
+      <img class="main-image" 
+           src="https://i.imgur.com/95UoE7j.jpeg" 
+           alt="Soul Fire Surf Wax Main Image">
+      
+      <!-- Thumbnails gallery beneath main image -->
+      <div class="thumb-gallery">
+        <img src="https://i.imgur.com/1VGQUeJ.jpeg" alt="Thumb1" onclick="document.querySelector('.main-image').src=this.src">
+        <img src="https://i.imgur.com/741PKsx.jpeg" alt="Thumb2" onclick="document.querySelector('.main-image').src=this.src">
+        <img src="https://i.imgur.com/b0hUEiA.jpeg" alt="Thumb3" onclick="document.querySelector('.main-image').src=this.src">
+        <img src="https://i.imgur.com/XRblwiX.jpeg" alt="Thumb4" onclick="document.querySelector('.main-image').src=this.src">
+        <img src="https://i.imgur.com/KItjbjZ.png" alt="Thumb5" onclick="document.querySelector('.main-image').src=this.src">
+        <img src="https://i.imgur.com/PolUJyx.jpeg" alt="Thumb6" onclick="document.querySelector('.main-image').src=this.src">
+        <img src="https://i.imgur.com/bCcQWer.jpeg" alt="Thumb7" onclick="document.querySelector('.main-image').src=this.src">
+      </div>
+    </div>
+
+    <!-- Right column (Title, subheading, price, buy, main text) -->
+    <div class="top-right">
+      <h1>SOUL FIRE SURF WAX</h1>
+      <h2 class="subheading">…by Daisy’s Cold Water Surf Team</h2>
+      <p class="price"><strong>£4.00</strong></p>
+
+      <button class="buy-now" 
+        onclick="window.open('https://alz.bigcartel.com/product/soul-fire-surf-wax', '_blank')">
+        Buy Now - £4.00
+      </button>
+
+      <p class="intro-text">
+        Soul Fire Surf Wax is cold water <em>(British wintertime)</em> surf wax, that can be used all year in Scotland.<br/><br/>
+        Experience the ultimate grip and durability with Soul Fire Surf Wax, your perfect companion for those chilly British wintertime surf sessions! This top-of-the-line cold water surf wax has been meticulously crafted by a leading British wax manufacturer in close collaboration with the UK’s most passionate underground surf locals.
+      </p>
+    </div>
+  </div>
+  <!-- End top-section -->
+
+  <!-- Why Choose Section -->
+  <section>
+    <h2>Why Choose Soul Fire Surf Wax?</h2>
+    <ul class="features">
+      <li><strong>Tailored for Cold Waters:</strong> Specifically formulated for 0 – 12 °C, ensuring optimal performance when you need it the most.</li>
+      <li><strong>Enhanced Grip:</strong> Infused with a special grip additive, guaranteeing an unparalleled stick factor, helping you stay firmly planted on your board during critical moments.</li>
+      <li><strong>Built to Last:</strong> Provides exceptional grip and remarkable durability, wave after wave.</li>
+      <li><strong>Spread Good Vibes:</strong> By choosing Soul Fire Surf Wax, you’re joining a community dedicated to positive vibes in the lineup.</li>
+    </ul>
+  </section>
+
+  <!-- How to Use -->
+  <section>
+    <h2>How to Use</h2>
+    <ol class="instructions">
+      <li>Ensure your surfboard is clean and dry before application.</li>
+      <li>Apply the wax in a circular motion until a bumpy layer forms.</li>
+      <li>Reapply as needed, and shred with confidence!</li>
+    </ol>
+  </section>
+
+  <!-- Shipping -->
+  <section>
+    <h2>Shipping</h2>
+    <p><strong>Global Reach:</strong> We proudly offer worldwide shipping, ensuring that Soul Fire Surf Wax can support surfers across the globe.</p>
+    <p>
+      Soul Fire Surf Wax is cold water (<em>British wintertime</em>) surf wax. 
+      Join the underground and surf deeper, heavier, and with more grip than ever before.
+    </p>
+  </section>
+
+  <!-- Optional large gallery at the bottom -->
+  <div class="large-gallery">
+    <img src="https://i.imgur.com/95UoE7j.jpeg" alt="Wax 1">
+    <img src="https://i.imgur.com/1VGQUeJ.jpeg" alt="Wax 2">
+    <img src="https://i.imgur.com/741PKsx.jpeg" alt="Wax 3">
+    <img src="https://i.imgur.com/b0hUEiA.jpeg" alt="Wax 4">
+    <img src="https://i.imgur.com/XRblwiX.jpeg" alt="Wax 5">
+    <img src="https://i.imgur.com/KItjbjZ.png" alt="Surf Shot 1">
+    <img src="https://i.imgur.com/PolUJyx.jpeg" alt="Surf Shot 2">
+    <img src="https://i.imgur.com/bCcQWer.jpeg" alt="Surf Shot 3">
+  </div>
+
+  <footer>
+    “The best wax ever” – Al
+  </footer>
+</div>
+
+</body>
+</html>

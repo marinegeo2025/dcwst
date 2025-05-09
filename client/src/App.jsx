@@ -9,6 +9,15 @@ import Taggbox from "./components/Taggbox";
 import { Analytics } from '@vercel/analytics/react';
 import FriendsSupporters from './components/FriendsSupporters';
 
+const trackProductClick = (label) => {
+  window.gtag && window.gtag("event", "product_card_click", {
+    event_category: "Product Link",
+    event_label: label,
+    transport_type: "beacon"
+  });
+};
+
+
 // Define once at the top (optional, clean)
 const API_BASE = "https://dcwst.onrender.com";
 
@@ -214,6 +223,7 @@ const updateSurferPoints = (id, newPoints) => {
           href="https://daisyscoldwatersurfcream.com"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackProductClick("OG Cream")}
           className="group block bg-gray-900 p-6 rounded-xl shadow-md transition transform duration-300 hover:scale-105 hover:rotate-1 hover:animate-pro-pulse"
         >
           <div className="flex justify-center mb-4">
@@ -238,6 +248,7 @@ const updateSurferPoints = (id, newPoints) => {
           href="/sfsw.html"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackProductClick("Soul Fire Surf Wax")}
           className="group block bg-gray-900 p-6 rounded-xl shadow-md transition transform duration-300 hover:scale-105 hover:rotate-1 hover:animate-pro-pulse"
         >
           <div className="flex justify-center mb-4">
@@ -262,6 +273,7 @@ const updateSurferPoints = (id, newPoints) => {
           href="https://www.bodyblueprintai.life/?v=2"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackProductClick("BodyBlueprint AI")}
           className="group block bg-gray-900 p-6 rounded-xl shadow-md transition transform duration-300 hover:scale-105 hover:rotate-1 hover:animate-pro-pulse"
         >
           <div className="flex justify-center mb-4">
@@ -285,6 +297,7 @@ const updateSurferPoints = (id, newPoints) => {
           href="https://alz.bigcartel.com/product/genki-cbd-cream"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackProductClick("Genki CBD Cream")}
           className="group block bg-gray-900 p-6 rounded-xl shadow-md transition transform duration-300 hover:scale-105 hover:rotate-1 hover:animate-pro-pulse"
         >
           <div className="flex justify-center mb-4">

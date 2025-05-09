@@ -9,7 +9,7 @@ export default function FriendsSupporters() {
   };
 
   return (
-    <section className="bg-[#F7F6F6] py-20" aria-label="Friends and Supporters Logos">
+    <section className="bg-white py-20" aria-label="Friends and Supporters Logos">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold mb-12 text-gray-900 tracking-tight">Top Supporters</h2>
         <div className="flex flex-wrap justify-center gap-10 items-center mb-20">

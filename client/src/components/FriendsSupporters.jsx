@@ -9,10 +9,10 @@ export default function FriendsSupporters() {
   };
 
   return (
-    <section className="bg-gray-100 py-20" aria-label="Friends and Supporters Logos">
+    <section className="bg-white py-20" aria-label="Friends and Supporters Logos">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-4xl font-bold mb-12 text-gray-900 tracking-tight">Top Supporters</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-10 items-center justify-center mb-20">
+        <div className="flex flex-wrap justify-center gap-10 items-center mb-20">
           <a href="http://www.nolimitwetsuits.co.uk/" target="_blank" rel="noopener noreferrer" onClick={() => trackClick("No Limit Wetsuits")}> <img src="/logos/nolimit.png" alt="No Limit Wetsuits" className="h-36 max-w-[160px] p-4 mx-auto grayscale hover:grayscale-0 hover:scale-105 transform transition duration-300" /> </a>
           <a href="https://www.lostshore.com/" target="_blank" rel="noopener noreferrer" onClick={() => trackClick("Lost Shore Surf Resort")}> <img src="/logos/lostshore.png" alt="Lost Shore Surf Resort" className="h-36 max-w-[160px] p-4 mx-auto grayscale hover:grayscale-0 hover:scale-105 transform transition duration-300" /> </a>
           <a href="https://www.facebook.com/PegSurfCoaching/?locale=en_GB" target="_blank" rel="noopener noreferrer" onClick={() => trackClick("Pegleg Surf Coaching")}> <img src="/logos/pegleg.png" alt="Pegleg Surf Coaching" className="h-36 max-w-[160px] p-4 mx-auto grayscale hover:grayscale-0 hover:scale-105 transform transition duration-300" /> </a>

@@ -7,7 +7,7 @@ import WhatWeStandFor from "./WhatWeStandFor";
 import Apparel from "./components/Apparel";
 import Taggbox from "./components/Taggbox";
 import { Analytics } from '@vercel/analytics/react';
-import FriendsSupporters from "./components/FriendsSupporters";
+import FriendsSupporters from './components/FriendsSupporters';
 
 // Define once at the top (optional, clean)
 const API_BASE = "https://dcwst.onrender.com";

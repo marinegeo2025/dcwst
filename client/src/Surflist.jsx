@@ -1,58 +1,77 @@
 import React, { useState, useEffect } from "react";
 
+// Change this to your actual server URL
+const API_BASE = "https://dcwst.onrender.com";
+
 export default function Surflist({ isAdmin, onAdminLogin, onAdminLogout }) {
-  // Local state for listing items and the add-listing form
+  // Listing array and form state
   const [listings, setListings] = useState([]);
   const [form, setForm] = useState({
     title: "",
     price: "",
     contact: "",
-    duration: "30",
+    duration: "30", // "days" to keep consistent with your dropdown
   });
 
-  // Modal + password for admin login
+  // Admin modal & password
   const [showModal, setShowModal] = useState(false);
   const [adminPassword, setAdminPassword] = useState("");
 
-  // Load listings from localStorage on mount
+  // 1) Fetch listings from the server on mount
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("surfListings")) || [];
-    const now = Date.now();
-    // Filter out expired items
-    const filtered = stored.filter((item) => now < item.expiry);
-    setListings(filtered);
-    // Save back after filtering
-    localStorage.setItem("surfListings", JSON.stringify(filtered));
+    fetch(`${API_BASE}/api/listings`)
+      .then((res) => res.json())
+      .then((data) => setListings(data))
+      .catch((err) => console.error("Error fetching listings:", err));
   }, []);
 
-  // Update form fields
-  const handleInputChange = (e) =>
-    setForm({ ...form, [e.target.name]: e.target.value });
+  // 2) Update form fields
+  const handleInputChange = (e) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
-  // Add a new listing
+  // 3) Submit a new listing
   const handleSubmit = (e) => {
     e.preventDefault();
-    const expiry = Date.now() + parseInt(form.duration) * 86400000; // days in ms
-    const newItem = { ...form, id: Date.now(), expiry };
-    const updated = [...listings, newItem];
-    setListings(updated);
-    localStorage.setItem("surfListings", JSON.stringify(updated));
-    // Reset form
-    setForm({ title: "", price: "", contact: "", duration: "30" });
+    // Convert "duration" to a number of days; the server sets expiry
+    const durationDays = parseInt(form.duration, 10);
+
+    const newListing = {
+      title: form.title,
+      price: form.price,
+      contact: form.contact,
+      durationDays, // So the server can compute expiry
+    };
+
+    fetch(`${API_BASE}/api/listings`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newListing),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // data.listings should be the updated list
+        setListings(data.listings);
+        // Reset form
+        setForm({ title: "", price: "", contact: "", duration: "30" });
+      })
+      .catch((err) => console.error("Error adding listing:", err));
   };
 
-  // Delete an existing listing
+  // 4) Delete a listing
   const handleDelete = (id) => {
-    const updated = listings.filter((item) => item.id !== id);
-    setListings(updated);
-    localStorage.setItem("surfListings", JSON.stringify(updated));
+    fetch(`${API_BASE}/api/listings/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => setListings(data.listings))
+      .catch((err) => console.error("Error deleting listing:", err));
   };
 
-  // Determine the icon for contact (email vs phone)
-  const getContactIcon = (contact) =>
-    contact.includes("@") ? "📧" : "📱";
+  // 5) Show either "📧" or "📱" depending on contact
+  const getContactIcon = (contact) => (contact.includes("@") ? "📧" : "📱");
 
-  // Trigger the parent's onAdminLogin() with the typed password
+  // 6) Admin login from modal
   const handleAdminLoginClick = () => {
     onAdminLogin(adminPassword);
     setShowModal(false);
@@ -64,9 +83,7 @@ export default function Surflist({ isAdmin, onAdminLogin, onAdminLogout }) {
       id="surflist"
       className="bg-black text-white px-6 py-12 max-w-4xl mx-auto text-center"
     >
-      <h2 className="text-3xl font-bold mb-6">
-        🌊 Surflist: Buy, Sell and Trade
-      </h2>
+      <h2 className="text-3xl font-bold mb-6">🌊 Surflist: Buy, Sell and Trade</h2>
 
       {/* Add Listing Form */}
       <form

@@ -1,18 +1,19 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const cors = require('cors'); // ✅ CORS support
+const cors = require('cors');
 const app = express();
 
-// 1) Path constants
+// === 1) Path constants ===
 const distPath = path.join(__dirname, "dist");
 const SURFERS_JSON_PATH = path.join(__dirname, ".data", "surfers.json");
+const LISTINGS_JSON_PATH = path.join(__dirname, ".data", "listings.json");
 
-// 2) Middleware
-app.use(cors()); // ✅ Allow cross-origin requests (optional, safe)
+// === 2) Middleware ===
+app.use(cors());
 app.use(express.json());
 
-// 3) Helper functions
+// === 3) Helper functions ===
 function getSurfers() {
   if (!fs.existsSync(SURFERS_JSON_PATH)) return [];
   const data = fs.readFileSync(SURFERS_JSON_PATH, "utf8");
@@ -22,7 +23,16 @@ function saveSurfers(surfers) {
   fs.writeFileSync(SURFERS_JSON_PATH, JSON.stringify(surfers, null, 2), "utf8");
 }
 
-// 4) API routes
+function getListings() {
+  if (!fs.existsSync(LISTINGS_JSON_PATH)) return [];
+  const data = fs.readFileSync(LISTINGS_JSON_PATH, "utf8");
+  return JSON.parse(data);
+}
+function saveListings(listings) {
+  fs.writeFileSync(LISTINGS_JSON_PATH, JSON.stringify(listings, null, 2), "utf8");
+}
+
+// === 4) Surfer Routes ===
 app.get("/api/surfers", (req, res) => {
   const surfers = getSurfers();
   res.json(surfers);
@@ -54,7 +64,40 @@ app.delete("/api/surfers/:id", (req, res) => {
   res.json({ success: true, surfers: remaining });
 });
 
-// 5) Serve static frontend files
+// === 5) Listings Routes ===
+
+// GET all listings (non-expired)
+app.get("/api/listings", (req, res) => {
+  let listings = getListings();
+  const now = Date.now();
+  listings = listings.filter((listing) => now < listing.expiry);
+  saveListings(listings); // refresh cleaned list
+  res.json(listings);
+});
+
+// POST a new listing
+app.post("/api/listings", (req, res) => {
+  let listings = getListings();
+  const newListing = req.body;
+  newListing.id = Date.now();
+  if (newListing.durationDays) {
+    newListing.expiry = Date.now() + newListing.durationDays * 86400000;
+  }
+  listings.push(newListing);
+  saveListings(listings);
+  res.json({ success: true, listings });
+});
+
+// DELETE a listing
+app.delete("/api/listings/:id", (req, res) => {
+  const listingId = parseInt(req.params.id, 10);
+  let listings = getListings();
+  listings = listings.filter((l) => l.id !== listingId);
+  saveListings(listings);
+  res.json({ success: true, listings });
+});
+
+// === 6) Serve frontend ===
 app.use(express.static(distPath, {
   setHeaders: (res, filePath) => {
     if (filePath.endsWith('index.html')) {
@@ -65,7 +108,7 @@ app.use(express.static(distPath, {
   }
 }));
 
-// ✅ 6) SPA fallback ONLY for GET requests (no hijack of POST/PUT/DELETE)
+// SPA fallback
 app.use((req, res, next) => {
   if (req.method === "GET") {
     res.sendFile(path.join(distPath, "index.html"));
@@ -74,7 +117,7 @@ app.use((req, res, next) => {
   }
 });
 
-// 7) Start the server
+// === 7) Start the server ===
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);

@@ -330,7 +330,9 @@ const updateSurferPoints = (id, newPoints) => {
         <ColdWaterCrewLog />
       </section>
 
-      <FriendsSupporters />
+      <div className="mt-20">
+        <FriendsSupporters />
+      </div>
 
       {/* Footer */}
       <footer className="text-center text-gray-500 text-sm mt-20 mb-10">

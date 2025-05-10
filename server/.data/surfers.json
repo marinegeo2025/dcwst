@@ -42,6 +42,13 @@
     "image": "https://i.imgur.com/2i4TdsK.png"
   },
   {
+    "id": 7,
+    "name": "Ollie",
+    "country": "Wales",
+    "points": 1000,
+    "image": "https://i.imgur.com/JaNLxEg.png"
+  },
+  {
     "id": 8,
     "name": "Luca",
     "country": "Wales",

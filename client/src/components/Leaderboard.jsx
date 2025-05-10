@@ -1,22 +1,97 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function Leaderboard({
-  isAdmin,
-  surfers,
-  newSurfer,
-  setNewSurfer,
-  addSurfer,
-  removeSurfer,
-  updateSurferPoints,
-}) {
-  // Track which surfer is being edited + the new points input
+// Server URL
+const API_BASE = "https://dcwst.onrender.com";
+
+export default function Leaderboard({ isAdmin }) {
+  // Local state for surfers
+  const [surfers, setSurfers] = useState([]);
+  // Local state for the "Add Surfer" form
+  const [newSurfer, setNewSurfer] = useState({
+    name: "",
+    country: "",
+    points: 0,
+    image: "",
+  });
+
+  // Editing state
   const [editingId, setEditingId] = useState(null);
   const [editPoints, setEditPoints] = useState("");
 
-  // 1) Sort surfers by descending points
+  // Fetch surfers once on mount
+  useEffect(() => {
+    fetch(`${API_BASE}/api/surfers`)
+      .then((res) => res.json())
+      .then((data) => setSurfers(data))
+      .catch((err) => console.error("Error fetching surfers:", err));
+  }, []);
+
+  /* =========================
+        CRUD METHODS
+  ==========================*/
+
+  // 1) Add a new surfer
+  const addSurfer = () => {
+    // Basic validation
+    if (!newSurfer.name.trim()) return;
+
+    // Prepare data to send (no "id" — let the server set it)
+    const surferToAdd = {
+      name: newSurfer.name,
+      country: newSurfer.country,
+      points: Number(newSurfer.points) || 0,
+      image: newSurfer.image,
+    };
+
+    fetch(`${API_BASE}/api/surfers`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(surferToAdd),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // The server returns { success: true, surfers: [...] }
+        setSurfers(data.surfers);
+        // Clear the form
+        setNewSurfer({ name: "", country: "", points: 0, image: "" });
+      })
+      .catch((err) => console.error("Add error:", err));
+  };
+
+  // 2) Remove a surfer
+  const removeSurfer = (idToRemove) => {
+    fetch(`${API_BASE}/api/surfers/${idToRemove}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setSurfers(data.surfers);
+      })
+      .catch((err) => console.error("Delete error:", err));
+  };
+
+  // 3) Update surfer points
+  const updateSurferPoints = (id, newPoints) => {
+    fetch(`${API_BASE}/api/surfers/${id}/points`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ points: newPoints }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setSurfers(data.surfers);
+      })
+      .catch((err) => console.error("Update error:", err));
+  };
+
+  /* ======================================
+      RANKING & EDIT/ADD LOGIC
+  ======================================*/
+
+  // Sort descending
   const sortedSurfers = [...surfers].sort((a, b) => b.points - a.points);
 
-  // 2) Assign Dense Ranks (ties share rank, next distinct score => rank+1)
+  // Dense rank
   let prevPoints = null;
   let currentRank = 0;
   let distinctCount = 0;
@@ -53,7 +128,7 @@ export default function Leaderboard({
 
   return (
     <section className="p-4">
-      {/* --- Admin-Only: Add Surfer Form --- */}
+      {/* =========== Admin-Only: Add Surfer Form =========== */}
       {isAdmin && (
         <div className="bg-white text-black p-6 rounded mb-6 shadow-lg">
           <h3 className="text-xl font-bold mb-4">Add Team Member</h3>
@@ -104,7 +179,7 @@ export default function Leaderboard({
         </div>
       )}
 
-      {/* --- Display Ranks & Surfers --- */}
+      {/* =========== Display Ranks & Surfers =========== */}
       <div className="grid grid-cols-1 gap-4">
         {rankedSurfers.map((surfer) => (
           <div

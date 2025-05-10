@@ -2,8 +2,9 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
-const { Pool } = require('pg');
 require('dotenv').config(); // Load .env variables
+
+const { createClient } = require('@supabase/supabase-js');
 
 const app = express();
 
@@ -15,65 +16,77 @@ const LISTINGS_JSON_PATH = path.join(__dirname, ".data", "listings.json");
 app.use(cors());
 app.use(express.json());
 
-// === 3) PostgreSQL DB setup (Supabase) ===
-const pool = new Pool({
-  connectionString: process.env.SUPABASE_DB_URL,
-});
+// === 3) Supabase Client Setup ===
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_KEY
+);
 
-// === 4) Surfer Routes (Now from Supabase DB) ===
+// === 4) Surfer Routes (Supabase) ===
 
-// GET all surfers
 app.get("/api/surfers", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT * FROM surfers ORDER BY id");
-    res.json(result.rows);
-  } catch (err) {
-    console.error("Error fetching surfers:", err);
-    res.status(500).json({ error: "Database fetch error" });
+  const { data, error } = await supabase
+    .from("surfers")
+    .select("*")
+    .order("id", { ascending: true });
+
+  if (error) {
+    console.error("Error fetching surfers:", error);
+    return res.status(500).json({ error: "Database fetch error" });
   }
+
+  res.json(data);
 });
 
-// ADD new surfer
 app.post("/api/surfers", async (req, res) => {
   const { name, country, points, image } = req.body;
-  try {
-    await pool.query(
-  "INSERT INTO surfers (name, country, points, image) VALUES ($1, $2, $3, $4)",
-  [name, country, points || 0, image || ""]
-    );
-    const updated = await pool.query("SELECT * FROM surfers ORDER BY id");
-    res.json({ success: true, surfers: updated.rows });
-  } catch (err) {
-    console.error("Error adding surfer:", err);
-    res.status(500).json({ error: "Database insert error" });
+
+  const { error } = await supabase.from("surfers").insert([
+    { name, country, points: points || 0, image: image || "" }
+  ]);
+
+  if (error) {
+    console.error("Error adding surfer:", error);
+    return res.status(500).json({ error: "Database insert error" });
   }
+
+  const { data } = await supabase.from("surfers").select("*").order("id");
+  res.json({ success: true, surfers: data });
 });
 
-// UPDATE surfer points
 app.put("/api/surfers/:id/points", async (req, res) => {
   const surferId = parseInt(req.params.id, 10);
   const { points } = req.body;
-  try {
-    await pool.query("UPDATE surfers SET points = $1 WHERE id = $2", [points, surferId]);
-    const updated = await pool.query("SELECT * FROM surfers ORDER BY id");
-    res.json({ success: true, surfers: updated.rows });
-  } catch (err) {
-    console.error("Error updating points:", err);
-    res.status(500).json({ error: "Database update error" });
+
+  const { error } = await supabase
+    .from("surfers")
+    .update({ points })
+    .eq("id", surferId);
+
+  if (error) {
+    console.error("Error updating points:", error);
+    return res.status(500).json({ error: "Database update error" });
   }
+
+  const { data } = await supabase.from("surfers").select("*").order("id");
+  res.json({ success: true, surfers: data });
 });
 
-// DELETE a surfer
 app.delete("/api/surfers/:id", async (req, res) => {
   const surferId = parseInt(req.params.id, 10);
-  try {
-    await pool.query("DELETE FROM surfers WHERE id = $1", [surferId]);
-    const updated = await pool.query("SELECT * FROM surfers ORDER BY id");
-    res.json({ success: true, surfers: updated.rows });
-  } catch (err) {
-    console.error("Error deleting surfer:", err);
-    res.status(500).json({ error: "Database delete error" });
+
+  const { error } = await supabase
+    .from("surfers")
+    .delete()
+    .eq("id", surferId);
+
+  if (error) {
+    console.error("Error deleting surfer:", error);
+    return res.status(500).json({ error: "Database delete error" });
   }
+
+  const { data } = await supabase.from("surfers").select("*").order("id");
+  res.json({ success: true, surfers: data });
 });
 
 // === 5) Listings Routes (Still using .json) ===
@@ -87,7 +100,6 @@ function saveListings(listings) {
   fs.writeFileSync(LISTINGS_JSON_PATH, JSON.stringify(listings, null, 2), "utf8");
 }
 
-// GET non-expired listings
 app.get("/api/listings", (req, res) => {
   let listings = getListings();
   const now = Date.now();
@@ -96,7 +108,6 @@ app.get("/api/listings", (req, res) => {
   res.json(listings);
 });
 
-// ADD new listing
 app.post("/api/listings", (req, res) => {
   let listings = getListings();
   const newListing = req.body;
@@ -109,7 +120,6 @@ app.post("/api/listings", (req, res) => {
   res.json({ success: true, listings });
 });
 
-// DELETE listing
 app.delete("/api/listings/:id", (req, res) => {
   const listingId = parseInt(req.params.id, 10);
   let listings = getListings();
@@ -129,7 +139,6 @@ app.use(express.static(distPath, {
   }
 }));
 
-// SPA fallback
 app.use((req, res, next) => {
   if (req.method === "GET") {
     res.sendFile(path.join(distPath, "index.html"));

@@ -22,7 +22,7 @@ export default function Competitions() {
           SURF COMPETITION #001
         </h2>
         <p className="mt-4 text-lg text-gray-300 max-w-xl mx-auto">
-          Join our #hashtagged Instagram - YouTube - Facebook contests STARTING MAY 2025 – surf clips, stoke, and epic prizes (TBA).
+          Join our #hashtagged Instagram - YouTube - Facebook contests STARTING SOON - EXPECT ~JUNE 2025 – surf clips, stoke, and epic prizes (TBA).
         </p>
         <a
           href="https://woobox.com/iiu7j9"

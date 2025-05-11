@@ -43,11 +43,10 @@ export default function Apparel() {
       <li>Twin needle sleeves and hem</li>
       <li>Tubular body</li>
       <li>Weight: White 175 gsm, Colours 185 gsm</li>
-      <li>*Sport grey & Antiques: 90% cotton/10% polyester, Ash 99% cotton/1% polyester</li>
-    </ul>
+          </ul>
   </p>
   <p className="text-sm text-gray-400 mt-4">
-    A great everyday tee for all. Classic style meets everyday utility. Available in 71 colours — with solid, antique, and ANSI/ISEA high-vis options.
+    A great everyday tee for all. Classic style meets everyday utility.
   </p>
   <p className="mt-4">
     <a

@@ -10,58 +10,67 @@ export default function Apparel() {
 
       {/* NEW OG DROP TEE */}
       <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-10 animate-fade-in-up delay-50">
-        <img
-          src="https://i.imgur.com/s1DzCUJ.png"
-          alt="OG Drop Tee Front"
-          className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
-        />
-        <img
-          src="https://i.imgur.com/WBpgueh.png"
-          alt="OG Drop Tee Back"
-          className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
-        />
-      </div>
+  <img
+    src="https://i.imgur.com/s1DzCUJ.png"
+    alt="OG Drop Tee Front"
+    className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
+  />
+  <img
+    src="https://i.imgur.com/WBpgueh.png"
+    alt="OG Drop Tee Back"
+    className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
+  />
+</div>
 
-      <div className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100">
-        <p className="mb-4 font-semibold">
-          DAISY'S COLD WATER SURF TEAM T-Shirt // OFFICIAL OG DROP
-        </p>
-        <p className="mb-4">
-          Big Drip for Cold Water Legends. Checker-style heat on a crisp white tee. Built for cold water squad members.
-        </p>
-        <p className="mb-4 italic">
-          Unisex fit. Clean lines. Ice cold. Only for the real ones.
-          <br />
-          Suit up. Drop in. Stay steezy.
-        </p>
-        <p className="text-sm text-gray-400 mt-6">
-          <strong>Key features:</strong>
-          <ul className="list-disc list-inside mt-2 text-left">
-            <li>100% cotton heavyweight t-shirt*</li>
-            <li>Seamless twin needle collar</li>
-            <li>Taped neck and shoulders</li>
-            <li>Twin needle sleeves and hem</li>
-            <li>Tubular body</li>
-            <li>Weight: White 175 gsm, Colours 185 gsm</li>
-            <li>
-              *Sport grey & Antiques: 90% cotton/10% polyester, Ash 99% cotton/1% polyester
-            </li>
-          </ul>
-        </p>
-        <p className="text-sm text-gray-400 mt-4">
-          A great everyday tee for all. Classic style meets everyday utility. Available in 71 colours — with solid, antique, and ANSI/ISEA high-vis options.
-        </p>
-        <p className="mt-4">
-          <a
-            href="https://i.imgur.com/arnyCOU.png"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline text-blue-400 hover:text-blue-300"
-          >
-            View Size Chart
-          </a>
-        </p>
-      </div>
+<div className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100">
+  <p className="mb-4 font-semibold">
+    DAISY'S COLD WATER SURF TEAM T-Shirt // OFFICIAL OG DROP
+  </p>
+  <p className="mb-4">
+    Big Drip for Cold Water Legends. Checker-style heat on a crisp white tee. Built for cold water squad members.
+  </p>
+  <p className="mb-4 italic">
+    Unisex fit. Clean lines. Ice cold. Only for the real ones.
+    <br />
+    Suit up. Drop in. Stay steezy.
+  </p>
+  <p className="text-sm text-gray-400 mt-6">
+    <strong>Key features:</strong>
+    <ul className="list-disc list-inside mt-2 text-left">
+      <li>100% cotton heavyweight t-shirt*</li>
+      <li>Seamless twin needle collar</li>
+      <li>Taped neck and shoulders</li>
+      <li>Twin needle sleeves and hem</li>
+      <li>Tubular body</li>
+      <li>Weight: White 175 gsm, Colours 185 gsm</li>
+      <li>*Sport grey & Antiques: 90% cotton/10% polyester, Ash 99% cotton/1% polyester</li>
+    </ul>
+  </p>
+  <p className="text-sm text-gray-400 mt-4">
+    A great everyday tee for all. Classic style meets everyday utility. Available in 71 colours — with solid, antique, and ANSI/ISEA high-vis options.
+  </p>
+  <p className="mt-4">
+    <a
+      href="https://i.imgur.com/arnyCOU.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline text-blue-400 hover:text-blue-300"
+    >
+      View Size Chart
+    </a>
+  </p>
+  <div className="mt-6">
+    <a
+      href="https://bit.ly/4m7b393"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-bold transition"
+    >
+      SHOP NOW
+    </a>
+  </div>
+</div>
+
 
       {/* Existing Champions Tee */}
       <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-10 animate-fade-in-up delay-100">

@@ -104,6 +104,23 @@ export default function App() {
       </h2>
       <Leaderboard isAdmin={isAdmin} />
 
+<Surflist
+  isAdmin={isAdmin}
+  onAdminLogin={(password) => {
+    if (password === "daisyadmin") {
+      localStorage.setItem("isAdmin", "true");
+      setIsAdmin(true);
+    } else {
+      alert("Wrong password!");
+    }
+  }}
+  onAdminLogout={() => {
+    localStorage.removeItem("isAdmin");
+    setIsAdmin(false);
+  }}
+/>
+
+
       {/* Product Cards */}
       <section className="px-6 py-12 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
         <a

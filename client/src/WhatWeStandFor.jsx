@@ -9,7 +9,7 @@ export default function WhatWeStandFor() {
       }}
     >
       <motion.div
-        className="relative z-10 p-6 text-white uppercase tracking-wide text-xl leading-relaxed font-staatliches"
+        className="relative z-10 p-6 text-white uppercase tracking-wide text-xl leading-relaxed font-staatliches font-bold"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
@@ -53,7 +53,7 @@ export default function WhatWeStandFor() {
         <p className="mt-8">
           OUR MISSION: TO BECOME A FULLY OPERATIONAL SURF TEAM.<br />
           THE TOP 20 SURFERS ON OUR LEADERBOARD WILL BE FUNDED — FULLY.<br />
-          THIS ISN’T JUST A DREAM. IT’S THE PLAN.
+          THIS ISN’T JUST A DREAM. IT’S THE BLUEPRINT.
         </p>
 
         <p className="mt-8">

@@ -29,9 +29,10 @@ export default function WhatWeStandFor() {
         </h2>
 
         <p>
-          WE ARE NOT A BRAND.<br />
+          WE ARE A VISION. A VIBE. A VOICE FOR GOOD.<br />
           WE ARE A MOVEMENT.<br />
           A COLD-WATER TRIBE. A SURF FAMILY. A MISSION.
+          UNITED BY LOVE FOR THE OCEAN AND A DEEP BELIEF IN EACH OTHER.
         </p>
 
         <p className="mt-8">

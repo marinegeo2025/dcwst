@@ -4,26 +4,21 @@ export default function WhatWeStandFor() {
   return (
     <section
       className="relative mt-8 px-6 pt-20 pb-12 mb-12 max-w-4xl mx-auto text-center space-y-10 rounded-2xl shadow-xl border border-white/10 overflow-hidden"
-      style={{
-        backgroundColor: "#0d111700", // transparent background fallback
-      }}
+      style={{ backgroundColor: "#0d111700" }}
     >
       <motion.div
         className="relative z-10 p-6 text-white uppercase tracking-wide text-xl leading-relaxed font-bold"
         style={{ fontFamily: "'Staatliches', sans-serif" }}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
       >
         <h2
           className="text-5xl mb-10 text-yellow-400"
           style={{
-            textShadow: 
+            textShadow: `
               2px 2px 0 #000,
               -2px 2px 0 #000,
               2px -2px 0 #000,
               -2px -2px 0 #000
-            ,
+            `,
           }}
         >
           What We Stand For
@@ -71,7 +66,8 @@ export default function WhatWeStandFor() {
         </p>
 
         <p className="mt-12 text-3xl text-yellow-400 font-extrabold">
-          THANK YOU FOR YOUR SUPPORT. STOKED TO HAVE YOU WITH US.
+          THANK YOU FOR YOUR SUPPORT.<br />
+          STOKED TO HAVE YOU WITH US.
         </p>
       </motion.div>
     </section>

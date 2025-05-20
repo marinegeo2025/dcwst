@@ -11,10 +11,7 @@ export default function Surflist({ isAdmin, onAdminLogin, onAdminLogout }) {
   };
 
   return (
-    <section
-      id="surflist"
-      className="bg-black text-white px-4 h-10 max-w-fit mx-auto flex items-center justify-center rounded-md"
-    >
+    <section id="surflist">
       {/* Admin Login Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50">
@@ -45,8 +42,8 @@ export default function Surflist({ isAdmin, onAdminLogin, onAdminLogout }) {
         </div>
       )}
 
-      {/* Admin Login/Logout UI */}
-      <div className="mt-8">
+      {/* Admin Login/Logout UI — fully centered */}
+      <div className="h-10 flex items-center justify-center bg-black rounded-md max-w-fit mx-auto px-4">
         {!isAdmin && (
           <button
             onClick={() => setShowModal(true)}

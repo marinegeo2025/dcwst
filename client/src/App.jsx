@@ -199,6 +199,7 @@ export default function App() {
   Shop GENKI CBD Cream
 </span>
 </a>
+</section>
 
 <Apparel />
 

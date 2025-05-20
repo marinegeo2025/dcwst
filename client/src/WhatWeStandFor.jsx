@@ -65,7 +65,7 @@ export default function WhatWeStandFor() {
         </p>
 
         <p className="mt-8 text-3xl">
-          THIS IS THE DAISY’S COLD WATER SURF TEAM.<br />
+          DAISY’S COLD WATER SURF TEAM.<br />
           A WARRIOR TEAM. A FAMILY. A FUTURE.
         </p>
 

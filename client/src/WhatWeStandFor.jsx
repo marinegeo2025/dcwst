@@ -3,17 +3,14 @@ import { motion } from "framer-motion";
 export default function WhatWeStandFor() {
   return (
     <section
-      className="relative px-6 py-20 mb-12 max-w-4xl mx-auto text-center space-y-10 rounded-2xl shadow-xl border border-white/10 overflow-hidden"
+      className="relative px-6 py-12 mb-12 max-w-4xl mx-auto text-center space-y-10 rounded-2xl shadow-xl border border-white/10 overflow-hidden"
       style={{
-        backgroundImage: `url('https://i.imgur.com/NQfvPIq.png')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundColor: "#0d111700",
+        backgroundColor: "#0d111700", // transparent fallback
+        // backgroundImage removed
       }}
     >
       <motion.div
-        className="relative z-10 p-8 text-white uppercase tracking-wide text-2xl leading-loose"
+        className="relative z-10 p-6 text-white uppercase tracking-wide text-xl leading-relaxed"
         style={{
           fontFamily: "'Staatliches', sans-serif",
           textShadow: "1px 1px 2px #000",
@@ -23,7 +20,7 @@ export default function WhatWeStandFor() {
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <h2
-          className="text-6xl mb-10"
+          className="text-5xl mb-10"
           style={{
             color: "#FFEC00",
             textShadow: `
@@ -32,7 +29,6 @@ export default function WhatWeStandFor() {
               2px -2px 0 #000,
               -2px -2px 0 #000
             `,
-            fontFamily: "'Staatliches', sans-serif",
           }}
         >
           What We Stand For
@@ -50,8 +46,8 @@ export default function WhatWeStandFor() {
         </p>
 
         <p className="mt-8">
-          WE BELIEVE IN DISCIPLINE, POSITIVITY, AND PUSHING PAST THE BREAK.<br />
-          WHETHER YOU’RE CHARGING SOLO, SHREDDING FROZEN CONCRETE,<br />
+          WE BELIEVE IN DISCIPLINE, POSITIVITY, AND PUSHING PAST WHAT IS CONSIDERED POSSIBLE TODAY.<br />
+          WHETHER YOU’RE CHARGING SOLO, SHREDDING CONCRETE,<br />
           OR TRAINING FOR YOUR BLACK BELT — YOU BELONG HERE.
         </p>
 

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function WhatWeStandFor() {
   return (
     <section
-      className="relative px-6 pt-20 pb-12 mb-12 max-w-4xl mx-auto text-center space-y-10 rounded-2xl shadow-xl border border-white/10 overflow-hidden"
+      className="relative mt-8 px-6 pt-20 pb-12 mb-12 max-w-4xl mx-auto text-center space-y-10 rounded-2xl shadow-xl border border-white/10 overflow-hidden"
       style={{
         backgroundColor: "#0d111700", // transparent background fallback
       }}

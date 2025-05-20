@@ -71,7 +71,7 @@ export default function WhatWeStandFor() {
 
         <p className="mt-12 text-3xl text-yellow-400 font-extrabold">
           THANK YOU FOR YOUR SUPPORT.<br />
-          LET’S BUILD THIS — TOGETHER.
+          STOKED TO HAVE YOU WITH US.
         </p>
       </motion.div>
     </section>

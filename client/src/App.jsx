@@ -198,6 +198,7 @@ export default function App() {
 <span className="inline-block mt-2 px-4 py-2 text-xs font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
   Shop GENKI CBD Cream
 </span>
+</a>
 
 <Apparel />
 

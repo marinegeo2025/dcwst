@@ -9,86 +9,78 @@ export default function WhatWeStandFor() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        // Remove or set to transparent if you want no fallback color:
-        backgroundColor: "#0d111700", 
+        backgroundColor: "#0d111700",
       }}
     >
-      {/*
-        --- REMOVED: Gradient Mask SVG ---
-        If you don't need a dark overlay at all, just remove or comment out the SVG.
-      */}
-      {/* <svg
-        className="absolute inset-0 w-full h-full z-0"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="none"
-        viewBox="0 0 100 100"
-      >
-        <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#0d1117" stopOpacity="0.4" />
-          <stop offset="100%" stopColor="#0d1117" stopOpacity="0.8" />
-        </linearGradient>
-        <rect width="100" height="100" fill="url(#fade)" />
-      </svg> */}
-
-      {/* Text Content with Framer Motion, but no extra backdrop color */}
       <motion.div
-        className="relative z-10 p-8" // removed backdrop-blur & background
+        className="relative z-10 p-8 text-white uppercase tracking-wide text-2xl leading-loose"
+        style={{
+          fontFamily: "'Staatliches', sans-serif",
+          textShadow: "1px 1px 2px #000",
+        }}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        {/* Fortnite-Style Heading */}
         <h2
-          className="text-6xl font-extrabold uppercase tracking-wide"
+          className="text-6xl mb-10"
           style={{
-            color: "#FFEC00", // bright Fortnite-like yellow
-            // Multi-directional black outline
+            color: "#FFEC00",
             textShadow: `
               2px 2px 0 #000,
               -2px 2px 0 #000,
               2px -2px 0 #000,
               -2px -2px 0 #000
             `,
+            fontFamily: "'Staatliches', sans-serif",
           }}
         >
           What We Stand For
         </h2>
 
-        {/* Paragraphs in white with a light black shadow for readability */}
-        <p className="text-white text-xl leading-relaxed font-medium mt-8"
-           style={{
-             textShadow: "1px 1px 2px #000",
-           }}
-        >
-          We’re not a brand. We’re a decentralized tribe of cold-water warriors — 
-          bound by saltwater, the cold, and a relentless respect for ourselves, the ocean, 
-          the environment and each other.
+        <p>
+          WE ARE NOT A BRAND.<br />
+          WE ARE A MOVEMENT.<br />
+          A COLD-WATER TRIBE. A SURF FAMILY. A MISSION.
         </p>
 
-        <p className="text-white text-xl leading-relaxed font-medium"
-           style={{
-             textShadow: "1px 1px 2px #000",
-           }}
-        >
-          Our mission: positivity, discipline, and riding deeper, heavier barrels than ever before.
+        <p className="mt-8">
+          OUR CODE IS WRITTEN IN SALT, COLD, AND RESPECT.<br />
+          FOR THE OCEAN. FOR OURSELVES. FOR EACH OTHER.
         </p>
 
-        <p className="text-white text-xl leading-relaxed font-medium"
-           style={{
-             textShadow: "1px 1px 2px #000",
-           }}
-        >
-          Whether you’re charging solo, shredding frozen concrete on a surfskate, 
-          or training for your black belt — we train hard, recover harder, and live 
-          by daily rituals that forge strength, resilience, and success.
+        <p className="mt-8">
+          WE BELIEVE IN DISCIPLINE, POSITIVITY, AND PUSHING PAST THE BREAK.<br />
+          WHETHER YOU’RE CHARGING SOLO, SHREDDING FROZEN CONCRETE,<br />
+          OR TRAINING FOR YOUR BLACK BELT — YOU BELONG HERE.
         </p>
 
-        <p className="text-white text-xl leading-relaxed font-medium"
-           style={{
-             textShadow: "1px 1px 2px #000",
-           }}
-        >
-          All action starts and ends with respect. Train for waves that break boards and people. Stay stoked, keep on rippin'!!!
+        <p className="mt-8">
+          WE TRAIN HARD. WE RECOVER HARDER.<br />
+          WE LIVE BY RITUALS THAT BUILD GRIT, POWER, AND PURPOSE.
+        </p>
+
+        <p className="mt-8">
+          OUR MISSION: TO BECOME A FULLY OPERATIONAL SURF TEAM.<br />
+          THE TOP 20 SURFERS ON OUR LEADERBOARD WILL BE FUNDED — FULLY.<br />
+          THIS ISN’T JUST A DREAM. IT’S THE PLAN.
+        </p>
+
+        <p className="mt-8">
+          SURFING IS TRANSFORMATIVE.<br />
+          IT CREATES STOKE. DEEP, LASTING STOKE.<br />
+          OUR SURFERS WILL BRING THAT STOKE HOME —<br />
+          IGNITING JOY, PURPOSE, AND POSSIBILITY IN THEIR COMMUNITIES.
+        </p>
+
+        <p className="mt-8 text-3xl">
+          THIS IS THE DAISY’S COLD WATER SURF TEAM.<br />
+          A WARRIOR TEAM. A FAMILY. A FUTURE.
+        </p>
+
+        <p className="mt-12 text-3xl text-yellow-400 font-extrabold">
+          THANK YOU FOR YOUR SUPPORT.<br />
+          LET’S BUILD THIS — TOGETHER.
         </p>
       </motion.div>
     </section>

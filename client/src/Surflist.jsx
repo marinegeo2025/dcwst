@@ -13,7 +13,7 @@ export default function Surflist({ isAdmin, onAdminLogin, onAdminLogout }) {
   return (
     <section
       id="surflist"
-      className="bg-black text-white px-4 py-2 max-w-fit mx-auto text-center rounded-md"
+      className="bg-black text-white px-4 h-10 max-w-fit mx-auto flex items-center justify-center rounded-md"
     >
       {/* Admin Login Modal */}
       {showModal && (

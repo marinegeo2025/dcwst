@@ -9,7 +9,8 @@ export default function WhatWeStandFor() {
       }}
     >
       <motion.div
-        className="relative z-10 p-6 text-white uppercase tracking-wide text-xl leading-relaxed font-staatliches font-bold"
+        className="relative z-10 p-6 text-white uppercase tracking-wide text-xl leading-relaxed font-bold"
+        style={{ fontFamily: "'Staatliches', sans-serif" }}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}

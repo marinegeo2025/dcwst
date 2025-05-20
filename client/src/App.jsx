@@ -5,7 +5,7 @@ import Competitions from "./components/Competitions";
 import Leaderboard from "./components/Leaderboard";
 import WhatWeStandFor from "./WhatWeStandFor";
 import Apparel from "./components/Apparel";
-import Taggbox from "./components/Taggbox";
+import Tagembed from "./components/Tagembed";
 import { Analytics } from "@vercel/analytics/react";
 import FriendsSupporters from "./components/FriendsSupporters";
 
@@ -93,7 +93,7 @@ export default function App() {
 
       <WhatWeStandFor />
       <Competitions />
-      <Taggbox />
+      <Tagembed />
 
       {/* Leaderboard */}
       <h2

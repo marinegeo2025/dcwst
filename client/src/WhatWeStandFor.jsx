@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const paragraphVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -13,7 +14,21 @@ const paragraphVariants = {
   }),
 };
 
+const flickerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: [0, 1, 0.4, 1, 0.8, 1],
+    transition: {
+      duration: 1.2,
+      ease: "easeInOut",
+    },
+  },
+};
+
 export default function WhatWeStandFor() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const paragraphs = [
     `WE ARE A VISION. A VIBE. A VOICE FOR GOOD.
      WE ARE A MOVEMENT.
@@ -47,17 +62,15 @@ export default function WhatWeStandFor() {
 
   return (
     <section
+      ref={ref}
       className="relative mt-8 px-6 pt-20 pb-12 mb-12 max-w-4xl mx-auto text-center space-y-10 rounded-2xl shadow-xl border border-white/10 overflow-hidden"
       style={{ backgroundColor: "#0d111700" }}
     >
       <motion.div
         className="relative z-10 p-6 text-white uppercase tracking-wide text-xl leading-relaxed font-bold"
         style={{ fontFamily: "'Staatliches', sans-serif" }}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
       >
-        <h2
+        <motion.h2
           className="text-5xl mb-10 text-yellow-400"
           style={{
             textShadow: `
@@ -67,9 +80,12 @@ export default function WhatWeStandFor() {
               -2px -2px 0 #000
             `,
           }}
+          variants={flickerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
         >
           What We Stand For
-        </h2>
+        </motion.h2>
 
         {paragraphs.map((text, i) => (
           <motion.p
@@ -79,7 +95,7 @@ export default function WhatWeStandFor() {
             }`}
             variants={paragraphVariants}
             initial="hidden"
-            animate="visible"
+            animate={isInView ? "visible" : "hidden"}
             custom={i}
           >
             {text.split("\n").map((line, idx) => (

@@ -22,7 +22,13 @@ export default function Competitions() {
           STORE
         </h2>
         <p className="mt-4 text-lg text-gray-300 max-w-xl mx-auto">
-          Visit our store.  Our goal with the store is to be able to financially support our top 20 surfers doing what they love: surfing. Surfing has amazing transformative power and through surfing our team riders bring stoke to their communities.  Help us to create a more stoked world by visiting the store and picking up your favorite merch today :)
+          
+Support our Mission. Fuel the Stoke.<br />
+
+Every purchase from our store helps power our vision: a fully-funded surf team where the top 20 riders are supported to do what they love — surf. Surfing isn’t just a sport. It’s transformative. It creates stoke, builds resilience, and inspires connection. Our team riders take that energy back into their communities — spreading happiness, love, and momentum.<br />
+
+Grab some gear. Rep the tribe. Help us build a more stoked world.<br />
+
         </p>
         <a
           href="https://store.daisyscoldwatersurfteam.com"

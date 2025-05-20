@@ -53,14 +53,14 @@ export default function WhatWeStandFor() {
         <p className="mt-8">
           OUR MISSION: TO BECOME A FULLY OPERATIONAL SURF TEAM.<br />
           THE TOP 20 SURFERS ON OUR LEADERBOARD WILL BE FUNDED — FULLY.<br />
-          THIS ISN’T JUST A DREAM. IT’S THE BLUEPRINT.
+          THIS ISN’T JUST A DREAM. IT’S THE BLUEPRINT TO A BRIGHTER FUTURE.
         </p>
 
         <p className="mt-8">
           SURFING IS TRANSFORMATIVE.<br />
           IT CREATES STOKE. DEEP, LASTING STOKE.<br />
-          OUR SURFERS WILL BRING THAT STOKE HOME —<br />
-          IGNITING JOY, PURPOSE, AND POSSIBILITY IN THEIR COMMUNITIES.
+          OUR SURFERS WILL BRING THAT STOKE HOME AND INTO THEIR COMMUNITIES—<br />
+          INSPIRING JOY, PURPOSE, AND POSSIBILITY.
         </p>
 
         <p className="mt-8 text-3xl">

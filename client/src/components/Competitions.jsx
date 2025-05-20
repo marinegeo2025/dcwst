@@ -19,16 +19,16 @@ export default function Competitions() {
       {/* Title and Button */}
       <div className="relative z-10">
         <h2 className="text-5xl italic font-extrabold text-white drop-shadow-lg tracking-wide">
-          SURF COMPETITION #001
+          STORE
         </h2>
         <p className="mt-4 text-lg text-gray-300 max-w-xl mx-auto">
-          Join our #hashtagged Instagram - YouTube - Facebook contests STARTING SOON - EXPECT ~JUNE 2025 – surf clips, stoke, and epic prizes (TBA).
+          Visit our store.  Our goal with the store is to be able to financially support our top 20 surfers doing what they love: surfing. Surfing has amazing transformative power and through surfing our team riders bring stoke to their communities.  Help us to create a more stoked world by visiting the store and picking up your favorite merch today :)
         </p>
         <a
-          href="https://woobox.com/iiu7j9"
+          href="https://store.daisyscoldwatersurfteam.com"
           className="inline-block mt-8 px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition"
         >
-          Enter Current Competitions (Coming Soon)
+          Visit the DCWST Store
         </a>
       </div>
     </section>

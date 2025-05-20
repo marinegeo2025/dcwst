@@ -185,38 +185,31 @@ export default function App() {
           className="group block bg-gray-900 p-6 rounded-xl shadow-md transition transform duration-300 hover:scale-105 hover:rotate-1 hover:animate-pro-pulse"
         >
           <div className="flex justify-center mb-4">
-            <img
-              src="https://i.imgur.com/AVpVqq4.png"
-              alt="GENKI CBD Cream"
-              className="w-16 h-16 rounded-full object-cover shadow-lg"
-            />
-          </div>
-          <h3 className="text-xl font-bold mb-2">🌿 GENKI CBD Cream</h3>
-          <p className="text-gray-400 text-sm mb-3">
-            Sustained Pain Relief. Empowered Recovery. Shea Butter + CBD.
-          </p>
-          <span className="inline-block mt-2 px-4 py-2 text-xs font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
-            Shop GENKI CBD Cream
-          </span>
-        </a>
-      </section>
+  <img
+    src="https://i.imgur.com/AVpVqq4.png"
+    alt="GENKI CBD Cream"
+    className="w-16 h-16 rounded-full object-cover shadow-lg"
+  />
+</div>
+<h3 className="text-xl font-bold mb-2">🌿 GENKI CBD Cream</h3>
+<p className="text-gray-400 text-sm mb-3">
+  Sustained Pain Relief. Empowered Recovery. Shea Butter + CBD.
+</p>
+<span className="inline-block mt-2 px-4 py-2 text-xs font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
+  Shop GENKI CBD Cream
+</span>
 
-      <Apparel />
-      <Surflist
-        isAdmin={isAdmin}
-        onAdminLogin={handleAdminLogin}
-        onAdminLogout={handleAdminLogout}
-      />
-      <section id="crewlog">
-        <ColdWaterCrewLog />
-      </section>
-      <div className="mt-20">
-        <FriendsSupporters />
-      </div>
-      <footer className="text-center text-gray-500 text-sm mt-20 mb-10">
-        © 2025 Daisy’s Cold Water Surf Team. Decentralized. Underground. Surfing.
-      </footer>
-      <Analytics />
+<Apparel />
+
+<div className="mt-20">
+  <FriendsSupporters />
+</div>
+
+<footer className="text-center text-gray-500 text-sm mt-20 mb-10">
+  © 2025 Daisy’s Cold Water Surf Team. Decentralized. Underground. Surfing.
+</footer>
+
+<Analytics />
     </div>
   );
 }

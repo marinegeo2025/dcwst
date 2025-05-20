@@ -3,26 +3,20 @@ import { motion } from "framer-motion";
 export default function WhatWeStandFor() {
   return (
     <section
-      className="relative px-6 py-12 mb-12 max-w-4xl mx-auto text-center space-y-10 rounded-2xl shadow-xl border border-white/10 overflow-hidden"
+      className="relative px-6 pt-20 pb-12 mb-12 max-w-4xl mx-auto text-center space-y-10 rounded-2xl shadow-xl border border-white/10 overflow-hidden"
       style={{
-        backgroundColor: "#0d111700", // transparent fallback
-        // backgroundImage removed
+        backgroundColor: "#0d111700", // transparent background fallback
       }}
     >
       <motion.div
-        className="relative z-10 p-6 text-white uppercase tracking-wide text-xl leading-relaxed"
-        style={{
-          fontFamily: "'Staatliches', sans-serif",
-          textShadow: "1px 1px 2px #000",
-        }}
+        className="relative z-10 p-6 text-white uppercase tracking-wide text-xl leading-relaxed font-staatliches"
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <h2
-          className="text-5xl mb-10"
+          className="text-5xl mb-10 text-yellow-400"
           style={{
-            color: "#FFEC00",
             textShadow: `
               2px 2px 0 #000,
               -2px 2px 0 #000,

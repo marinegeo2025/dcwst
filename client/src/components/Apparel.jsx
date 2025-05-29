@@ -70,16 +70,21 @@ export default function Apparel() {
   </div>
 </div>
 
-{/* NEW FROTH UNIT HOODIE */}
+{/* FROTH UNIT HOODIE (matching tee style) */}
 <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-10 animate-fade-in-up delay-75">
   <img
-    src="https://i.imgur.com/owQ6XgL.jpeg"
-    alt="Froth Unit Recon Zip Hoodie"
-    className="w-full md:w-1/2 rounded-lg shadow-lg object-contain h-[500px] bg-black p-4"
+    src="https://i.imgur.com/D1PcFtH.png"
+    alt="Froth Unit Hoodie Front"
+    className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
+  />
+  <img
+    src="https://i.imgur.com/1EP4MMw.png"
+    alt="Froth Unit Hoodie Back"
+    className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
   />
 </div>
 
-<div className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up delay-150">
+<div className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100">
   <p className="mb-4 font-semibold">
     DCWST “FROTH UNIT” RECON ZIP HOODIE
   </p>
@@ -87,7 +92,9 @@ export default function Apparel() {
     Built for the hood. Designed for the cold.
   </p>
   <p className="mb-4">
-    This heavyweight black zip hoodie is more than apparel — it’s a mission statement. Featuring the iconic <strong>"DEEPEST TOOBS WINS"</strong> statement, flanked by the <strong>FROTH UNIT wings</strong>, <strong>TOOB OPS skull patch</strong>, and <strong>DCWST RECON shield</strong>, this design is all grit and cold-water glory.
+    This heavyweight black zip hoodie is more than apparel — it’s a mission statement.
+    Featuring the iconic <strong>"DEEPEST TOOBS WINS"</strong> statement, flanked by the <strong>FROTH UNIT wings</strong>,
+    <strong> TOOB OPS skull patch</strong>, and <strong>DCWST RECON shield</strong>, this design is all grit and cold-water glory.
   </p>
   <ul className="list-disc list-inside text-left mb-4">
     <li>Ultra-soft interior, heavy-duty warmth</li>

@@ -70,17 +70,12 @@ export default function Apparel() {
   </div>
 </div>
 
-{/* FROTH UNIT HOODIE (matching tee style) */}
-<div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-10 animate-fade-in-up delay-75">
+{/* FROTH UNIT HOODIE (single image version, styled like tees) */}
+<div className="flex justify-center items-center mb-10 animate-fade-in-up delay-75">
   <img
-    src="https://i.imgur.com/D1PcFtH.png"
-    alt="Froth Unit Hoodie Front"
-    className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
-  />
-  <img
-    src="https://i.imgur.com/1EP4MMw.png"
-    alt="Froth Unit Hoodie Back"
-    className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
+    src="https://i.imgur.com/owQ6XgL.jpeg"
+    alt="Froth Unit Recon Zip Hoodie"
+    className="w-full md:w-2/3 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
   />
 </div>
 

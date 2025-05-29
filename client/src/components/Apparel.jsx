@@ -70,6 +70,47 @@ export default function Apparel() {
   </div>
 </div>
 
+{/* NEW FROTH UNIT HOODIE */}
+<div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-10 animate-fade-in-up delay-75">
+  <img
+    src="https://i.imgur.com/owQ6XgL.jpeg"
+    alt="Froth Unit Recon Zip Hoodie"
+    className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
+  />
+</div>
+
+<div className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up delay-150">
+  <p className="mb-4 font-semibold">
+    DCWST “FROTH UNIT” RECON ZIP HOODIE
+  </p>
+  <p className="mb-4">
+    Built for the hood. Designed for the cold.
+  </p>
+  <p className="mb-4">
+    This heavyweight black zip hoodie is more than apparel — it’s a mission statement. Featuring the iconic <strong>"DEEPEST TOOBS WINS"</strong> statement, flanked by the <strong>FROTH UNIT wings</strong>, <strong>TOOB OPS skull patch</strong>, and <strong>DCWST RECON shield</strong>, this design is all grit and cold-water glory.
+  </p>
+  <ul className="list-disc list-inside text-left mb-4">
+    <li>Ultra-soft interior, heavy-duty warmth</li>
+    <li>Full-length zipper with durable pull</li>
+    <li>Premium screen print front and back</li>
+    <li>Mission-ready graphics: Froth Unit Wings, Toob Ops Patch, DCWST Recon Shield</li>
+    <li>Coordinates: N 58°29'51.68" / W 006°16'23.29"</li>
+    <li>www.daisyscoldwatersurfteam.com</li>
+  </ul>
+  <p className="text-sm text-gray-400 italic">
+    RECON ISSUED. DCWST ONLY. The preview shown is only as accurate as monitors allow. The final shirt will differ slightly.
+  </p>
+  <div className="mt-6">
+    <a
+      href="https://bit.ly/4dG4Ixh"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-bold transition"
+    >
+      SHOP NOW
+    </a>
+  </div>
+</div>
 
       {/* Existing Champions Tee */}
       <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-10 animate-fade-in-up delay-100">

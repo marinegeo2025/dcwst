@@ -75,7 +75,7 @@ export default function Apparel() {
   <img
     src="https://i.imgur.com/owQ6XgL.jpeg"
     alt="Froth Unit Recon Zip Hoodie"
-    className="w-full md:w-2/3 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
+    className="w-full md:w-2/3 rounded-lg shadow-lg object-contain max-h-[500px] transform transition-transform duration-300 hover:scale-105"
   />
 </div>
 

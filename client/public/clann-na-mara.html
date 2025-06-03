@@ -19,16 +19,24 @@
     ul {
       margin-top: 0;
     }
-    .emoji {
-      font-size: 1.2rem;
-      margin-right: 0.3rem;
+    .toggle-btn {
+      background: #1f8c3c;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      margin-bottom: 1rem;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
+  <button class="toggle-btn" onclick="toggleLanguage()">GAELIC</button>
+
+  <div id="english">
   <h1>Clann na Mara</h1>
 
-  <p><strong>Clann na Mara</strong> is a Gaelic surf and ocean culture club for children in Eilean Siar. Through surf games, nature learning, and play, we help kids build confidence, learn water safety, and form a lifelong connection to the sea. All activities are bilingual and rooted in community values, promoting a love for nature and the protection of our coastline. To be a part of Clann na Mara you don’t have to be born here, but you better respect the ocean and it's people here.</p>
+  <p><strong>Clann na Mara</strong> is a Gaelic surf and ocean culture club for children in Eilean Siar. Through surf games, nature learning, and play, we help kids build confidence, learn water safety, and form a lifelong connection to the sea. All activities are bilingual and rooted in community values, promoting a love for nature and the protection of our coastline. To be a part of Clann na Mara you don’t have to be born here, but you better respect the ocean and its people here.</p>
 
   <p>This grassroots initiative is designed to connect young children — especially those in remote Gaelic speaking communities — with the natural marine environment through engaging, fun, and safe beach-based activities.</p>
 
@@ -40,7 +48,7 @@
 
   <p>The club will be delivered in close collaboration with <strong>Spòrsnis</strong> in Ness and <strong>Stornoway Karate Club</strong>.</p>
 
-  <p>By delivering the project entirely within the Outer Hebrides using aelic, we will also celebrate and strengthen Gaelic cultural identity through the language of the sea. Clann na Mara is a safe, positive space where children and families connect to nature, community, and heritage.</p>
+  <p>By delivering the project entirely within the Outer Hebrides using Gaelic, we will also celebrate and strengthen Gaelic cultural identity through the language of the sea. Clann na Mara is a safe, positive space where children and families connect to nature, community, and heritage.</p>
 
   <p>The long-term vision is to run seasonal versions of this club: 1) helping build a generation of young people empowered to manage and enjoy their ocean resources, 2) developing confident, capable ocean people, and 3) strengthening Gaelic stewardship of the island’s world-class wave resources.</p>
 
@@ -119,5 +127,126 @@
 
   <p>For more info or to support us: <a href="mailto:al@daisyscoldwatersurfteam.com">al@daisyscoldwatersurfteam.com</a></p>
   Spèis agus gràdh!
+</div>
+ <div id="gaelic" style="display: none;">
+  <h1>Clann na Mara</h1>
+
+  <p><strong>Clann na Mara</strong> ’na chlub surf is cultar mara Ghàidhealach do chlann ann an Eilean Siar. Tron gheamannan surf, ionnsachadh mu nàdar, agus cluich, bidh sinn a’ cuideachadh chloinne gus misneachd a thogail, ionnsachadh mu sàbhailteachd na mara, agus ceangal fad-beatha a dhèanamh ris a’ chuan. Tha a h-uile gnìomh dà-chànanach agus stèidhichte air luachan coimhearsnachd, a’ brosnachadh gaol don nàdar agus dìon oirthir na h-Alba.</p>
+
+  <p>Cha leig thu leas a bhith air do bhreith an seo gus a bhith nar buill – ach feumaidh tu spèis a thoirt don chuan agus do dhaoine an àite.</p>
+
+  <p>Tha an iomairt seo, a tha stèidhichte sa choimhearsnachd, ag amas air clann òga – gu sònraichte feadhainn ann an sgìrean iomallach far a bheil Gàidhlig fhathast làidir – a cheangal ri àrainneachd mhara nàdarra tron spòrs, sàbhailteachd agus ionnsachadh cruthachail air a’ tràigh.</p>
+
+  <p>Tha sinn airson mothachadh air a’ chuan, uallach sòisealta is àrainneachdail, agus sunnd pearsanta a neartachadh le bhith a’ toirt chothroman do chlann (timcheall air 6 bliadhna a dh'aois) cluiche agus ionnsachadh mu dheidhinn sàbhailteachd is morf-eòlas na tràghad. Tron phrògram trì-latha seo, gheibh iad misneachd corporra, seasmhachd inntinn, agus ceangal nas doimhne ris a’ chuan.</p>
+
+  <p>Tha sinn an dùil prògram 3-latha a ruith as t-samhradh leis a’ GROM SQUAD SURF CLUB – le sealladh gum fàs is gun leasaich e thar ùine.</p>
+
+  <p>Bu toigh leinn sgioba bheag fhastadh gus an tachartas a ruith, agus uidheamachd a cheannach a tha freagarrach do chlann bheaga: bòrdan foam, innealan cothromachaidh, seacaidean-teasairginn, agus wetsuits. Tha wetsuits ùr-nodha gu math aotrom is sùbailte, agus a’ toirt dìon anns a h-uile aimsir.</p>
+
+  <p>Thèid a’ chlub a lìbhrigeadh ann an co-obrachadh dlùth le <strong>Spòrsnis</strong> ann an Nis agus <strong>Club Karate Steòrnabhagh</strong>.</p>
+
+  <p>Le bhith a’ lìbhrigeadh a’ phròiseict gu tur taobh a-staigh nan Eilean Siar agus sa Ghàidhlig, brosnaichear is neartaichear dearbh-aithne Ghàidhealach tron chànan is cultar a’ chuain.</p>
+
+  <p>Is e an lèirsinn fhada a bhith a’ ruith chlubaichean ràitheil gus: 1) ginealach de dhaoine òga a thogail a tha misneachail anns a’ chuan agus eòlach air goireasan na mara aca fhèin, 2) daoine comasach sa mhuir a leasachadh, agus 3) àrdachadh a thoirt air uallach Gàidhealach airson stòrasan tonnan aig ìre cruinne nan eilean.</p>
+
+  <p><strong>Clàr-ama prògram</strong></p>
+
+  <h2>🏄‍♂️ CLUB SURF GROM SQUAD: PRÒGRAM 3-LATHA</h2>
+
+  <p><strong>Cluba Surf Coimhearsnachd</strong> – Feumaidh pàrant no neach-àraich a bhith còmhla ri gach pàiste. Bidh wetsuit a dhìth airson gnìomhachdan tràghad. Thathar a’ moladh seacaid-teasairginn airson sàbhailteachd a bharrachd, ach chan eil e riatanach, oir cha tèid na clann a-steach don uisge nas doimhne na am broilleach.</p>
+
+  <p><strong>Aois timcheall air 6 | Spòrsail, tòiseachaidh, togail misneachd</strong></p>
+
+  <h3>🌟 LATHA 1: ACADAMAIDH SURF A-STAIGH</h3>
+  <p><strong>📍 Àite:</strong> Spòrsnis & Tràigh (Nis, Stoth no Eòropaidh)<br>
+     <strong>🕙 10:00 – 12:00</strong></p>
+  <ul>
+    <li>Cearcall fàilte & geamannan ainm</li>
+    <li>Ro-ràdh air surf: dè th’ ann an tonn? dè th’ ann am "pop-up"?</li>
+    <li>Blàthachadh & geamannan gluasad (coiseachd crùbag, reòta suidheachadh surf)</li>
+    <li>Teicnigean eadar-dhealaichte airson "pop-up"</li>
+    <li>A bheil thu "goofyfoot" no "regular"?</li>
+    <li>Cleachdadh "pop-up" air mataichean</li>
+    <li>Ro-ràdh air surfskate bunaiteach</li>
+  </ul>
+
+  <p><strong>🕛 12:00 – 13:00</strong> – Lòn aig Cafaidh Breakwater</p>
+
+  <p><strong>🕐 13:00 – 17:00</strong></p>
+  <ul>
+    <li>Cearcallan sgilean cothromachaidh (BOSU, bòrdan lùbach, leum & tighinn air tìr)</li>
+    <li>Surfskate cleachdadh</li>
+    <li>Tonn-tarpaulin (clann air sgait-bhòrd am broinn tarp)</li>
+    <li>Ceis surf (ceistean èibhinn le duaisean)</li>
+  </ul>
+
+  <h3>🌊 LATHA 2: TRÈANADH TRÀIGH + CIAD TONN</h3>
+  <p><strong>📍 Àite:</strong> Tràigh ri dhearbhadh (Nis, Stoth no Eòropaidh)<br>
+     <strong>🕙 10:00 – 11:00</strong></p>
+  <ul>
+    <li>Sàbhailteachd & mothachadh mara (aimsir, tonnan, cruth na tràghad, sruthan)</li>
+    <li>Geamannan blàthachaidh le Cuibhle Surf</li>
+    <li>Cleachdaidhean tìr-thioram: "pop-ups", suidheachadh padail, modh</li>
+  </ul>
+
+  <p><strong>🕚 11:00 – 12:00</strong></p>
+  <ul>
+    <li>Ruith a-steach don uisge (adhbrannan & broilleach)</li>
+    <li>Ciad tonn air bòrd-bodhaig</li>
+    <li>Cluich an-asgaidh san uisge no air an tràigh</li>
+  </ul>
+
+  <p><strong>🕛 12:00 – 13:00</strong> – Lòn aig Cafaidh Breakwater</p>
+
+  <p><strong>🕐 13:00 – 15:00</strong> – Farpais chaisteil-gainmhich<br>
+     <strong>🕒 15:00 – 16:00</strong> – Seisean surf fo stiùireadh (le foamies is bòrdan-bodhaig)</p>
+
+  <h3>🏆 LATHA 3: FARPAIS SPÒRSAIL & COMHARADH</h3>
+  <p><strong>📍 Àite:</strong> Tràigh ri dhearbhadh (Nis, Stoth no Eòropaidh)<br>
+     <strong>🕙 10:00 – 11:00</strong></p>
+  <ul>
+    <li>Blàthachadh & geamannan surf</li>
+    <li>Cleachdaidhean le treòrachadh càirdeil</li>
+    <li>Dùbhlan Surf Grom – Cuibhle Fhortan</li>
+  </ul>
+
+  <p><strong>🕛 12:00 – 13:00</strong> – Lòn aig Cafaidh Breakwater</p>
+
+  <p><strong>🕐 13:00 – 16:00</strong></p>
+  <ul>
+    <li>Farpais Surf Grom (aotrom, spòrsail, gun bhrùthadh)</li>
+    <li>🏅 An Tonn As Fheàrr</li>
+    <li>😆 Tuiteam As Miosa</li>
+    <li>🔥 As Motha air Togail</li>
+    <li>🌈 Spiorad na Sgioba</li>
+  </ul>
+
+  <p><strong>🕞 16:30 – 17:00</strong> – Cuirm Dhuaisean & Reòiteag @ Cafaidh Breakwater 🍦</p>
+
+  <p>Airson tuilleadh fiosrachaidh no gus taic a thoirt dhuinn: <a href="mailto:al@daisyscoldwatersurfteam.com">al@daisyscoldwatersurfteam.com</a></p>
+  <p><strong>Spèis agus gràdh!</strong></p>
+</div>
+
+
+  <script>
+    function toggleLanguage() {
+      const en = document.getElementById("english");
+      const gd = document.getElementById("gaelic");
+      const btn = document.querySelector(".toggle-btn");
+      if (en.style.display === "none") {
+        en.style.display = "block";
+        gd.style.display = "none";
+        btn.textContent = "GAELIC";
+      } else {
+        en.style.display = "none";
+        gd.style.display = "block";
+        btn.textContent = "ENGLISH";
+      }
+    }
+  window.addEventListener('DOMContentLoaded', () => {
+  const prefersGaelic = navigator.language.startsWith("gd");
+  if (prefersGaelic) toggleLanguage();
+});
+</script>
 </body>
 </html>

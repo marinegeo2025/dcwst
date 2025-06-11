@@ -26,31 +26,7 @@ export default function ApparelCarousel() {
               },
               styles: {
                 product: {
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  height: "500px",
-                  margin: "15px",
-                  width: "100%",
-                  maxWidth: "300px",
-                  boxSizing: "border-box",
-                },
-                button: {
-                  backgroundColor: "#287aff !important",
-                  borderRadius: "15px !important",
-                  paddingLeft: "45px",
-                  paddingRight: "45px",
-                  color: "#fff",
-                },
-                img: {
-                  objectFit: "cover",
-                  height: "auto",
-                  maxHeight: "300px",
-                },
-                imgWrapper: {
-                  height: "300px",
-                  overflow: "hidden",
+                  textAlign: "center",
                 },
               },
               text: {
@@ -61,9 +37,11 @@ export default function ApparelCarousel() {
               styles: {
                 products: {
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-                  gap: "20px",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                  gap: "30px",
                   justifyContent: "center",
+                  maxWidth: "1000px",
+                  margin: "0 auto",
                 },
               },
             },
@@ -74,39 +52,17 @@ export default function ApparelCarousel() {
                 button: true,
                 buttonWithQuantity: true,
               },
-              styles: {
-                button: {
-                  backgroundColor: "#287aff !important",
-                  borderRadius: "15px !important",
-                  paddingLeft: "45px",
-                  paddingRight: "45px",
-                  color: "#fff",
-                },
-              },
               text: {
                 button: "Add to cart",
               },
             },
             cart: {
-              styles: {
-                button: {
-                  backgroundColor: "#287aff !important",
-                  borderRadius: "15px !important",
-                  color: "#fff",
-                },
-              },
               text: {
                 total: "Subtotal",
                 button: "Checkout",
               },
             },
-            toggle: {
-              styles: {
-                toggle: {
-                  backgroundColor: "#287aff !important",
-                },
-              },
-            },
+            toggle: {},
           },
         });
       });
@@ -137,6 +93,29 @@ export default function ApparelCarousel() {
         APPAREL
       </h2>
       <div id="collection-component-1749638086992" />
+
+      {/* 🔵 FORCE BLUE BUTTONS + CLEAN SIZING */}
+      <style>{`
+        .shopify-buy__btn {
+          background-color: #287aff !important;
+          border-radius: 15px !important;
+          color: white !important;
+          padding: 12px 24px !important;
+          font-weight: bold;
+        }
+        .shopify-buy__product {
+          max-width: 100%;
+        }
+        .shopify-buy__product__image-wrapper {
+          height: 300px;
+          overflow: hidden;
+        }
+        .shopify-buy__product__image {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+        }
+      `}</style>
     </section>
   );
 }

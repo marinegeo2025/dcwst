@@ -1,182 +1,146 @@
-import React from "react";
+import { useEffect } from "react";
 
-export default function Apparel() {
+export default function ApparelCarousel() {
+  useEffect(() => {
+    const scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+
+    function ShopifyBuyInit() {
+      const client = window.ShopifyBuy.buildClient({
+        domain: 'dzkc5u-y0.myshopify.com',
+        storefrontAccessToken: '42db3ccf256eb2251e6cab35869b8762',
+      });
+
+      window.ShopifyBuy.UI.onReady(client).then((ui) => {
+        ui.createComponent('collection', {
+          id: '674511323523',
+          node: document.getElementById('collection-component-1749638086992'),
+          moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
+          options: {
+            product: {
+              styles: {
+                product: {
+                  "@media (min-width: 601px)": {
+                    maxWidth: "calc(25% - 20px)",
+                    marginLeft: "20px",
+                    marginBottom: "50px",
+                    width: "calc(25% - 20px)",
+                  },
+                  img: {
+                    height: "calc(100% - 15px)",
+                    position: "absolute",
+                    left: "0",
+                    right: "0",
+                    top: "0",
+                  },
+                  imgWrapper: {
+                    paddingTop: "calc(75% + 15px)",
+                    position: "relative",
+                    height: "0",
+                  },
+                },
+                button: {
+                  backgroundColor: "#287aff",
+                  ":hover": { backgroundColor: "#246ee6" },
+                  ":focus": { backgroundColor: "#246ee6" },
+                  borderRadius: "11px",
+                  paddingLeft: "45px",
+                  paddingRight: "45px",
+                },
+              },
+              text: {
+                button: "Add to cart",
+              },
+            },
+            productSet: {
+              styles: {
+                products: {
+                  "@media (min-width: 601px)": {
+                    marginLeft: "-20px",
+                  },
+                },
+              },
+            },
+            modalProduct: {
+              contents: {
+                img: false,
+                imgWithCarousel: true,
+                button: false,
+                buttonWithQuantity: true,
+              },
+              styles: {
+                product: {
+                  "@media (min-width: 601px)": {
+                    maxWidth: "100%",
+                    marginLeft: "0px",
+                    marginBottom: "0px",
+                  },
+                },
+                button: {
+                  backgroundColor: "#287aff",
+                  ":hover": { backgroundColor: "#246ee6" },
+                  ":focus": { backgroundColor: "#246ee6" },
+                  borderRadius: "11px",
+                  paddingLeft: "45px",
+                  paddingRight: "45px",
+                },
+              },
+              text: {
+                button: "Add to cart",
+              },
+            },
+            cart: {
+              styles: {
+                button: {
+                  backgroundColor: "#287aff",
+                  ":hover": { backgroundColor: "#246ee6" },
+                  ":focus": { backgroundColor: "#246ee6" },
+                  borderRadius: "11px",
+                },
+              },
+              text: {
+                total: "Subtotal",
+                button: "Checkout",
+              },
+            },
+            toggle: {
+              styles: {
+                toggle: {
+                  backgroundColor: "#287aff",
+                  ":hover": { backgroundColor: "#246ee6" },
+                  ":focus": { backgroundColor: "#246ee6" },
+                },
+              },
+            },
+          },
+        });
+      });
+    }
+
+    if (window.ShopifyBuy) {
+      if (window.ShopifyBuy.UI) {
+        ShopifyBuyInit();
+      } else {
+        const script = document.createElement("script");
+        script.src = scriptURL;
+        script.async = true;
+        script.onload = ShopifyBuyInit;
+        document.head.appendChild(script);
+      }
+    } else {
+      const script = document.createElement("script");
+      script.src = scriptURL;
+      script.async = true;
+      script.onload = ShopifyBuyInit;
+      document.head.appendChild(script);
+    }
+  }, []);
+
   return (
-    <section className="py-16 px-6 max-w-6xl mx-auto text-center">
-      {/* Big heading */}
-      <h2 className="text-5xl font-extrabold mb-10 tracking-widest text-white drop-shadow-lg animate-fade-in-up">
+    <section className="py-16 px-6 max-w-7xl mx-auto text-center">
+      <h2 className="text-5xl font-extrabold mb-10 tracking-widest text-white drop-shadow-lg">
         APPAREL
       </h2>
-
-      {/* NEW OG DROP TEE */}
-      <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-10 animate-fade-in-up delay-50">
-  <img
-    src="https://i.imgur.com/s1DzCUJ.png"
-    alt="OG Drop Tee Front"
-    className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
-  />
-  <img
-    src="https://i.imgur.com/WBpgueh.png"
-    alt="OG Drop Tee Back"
-    className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
-  />
-</div>
-
-<div className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100">
-  <p className="mb-4 font-semibold">
-    DAISY'S COLD WATER SURF TEAM T-Shirt // OFFICIAL OG DROP
-  </p>
-  <p className="mb-4">
-    Big Drip for Cold Water Legends. Checker-style heat on a crisp white tee. Built for cold water squad members.
-  </p>
-  <p className="mb-4 italic">
-    Unisex fit. Clean lines. Ice cold. Only for the real ones.
-    <br />
-    Suit up. Drop in. Stay steezy.
-  </p>
-  <p className="text-sm text-gray-400 mt-6">
-    <strong>Key features:</strong>
-    <ul className="list-disc list-inside mt-2 text-left">
-      <li>100% cotton heavyweight t-shirt*</li>
-      <li>Seamless twin needle collar</li>
-      <li>Taped neck and shoulders</li>
-      <li>Twin needle sleeves and hem</li>
-      <li>Tubular body</li>
-      <li>Weight: White 175 gsm, Colours 185 gsm</li>
-          </ul>
-  </p>
-  <p className="text-sm text-gray-400 mt-4">
-    A great everyday tee for all. Classic style meets everyday utility.
-  </p>
-  <p className="mt-4">
-    <a
-      href="https://i.imgur.com/arnyCOU.png"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="underline text-blue-400 hover:text-blue-300"
-    >
-      View Size Chart
-    </a>
-  </p>
-  <div className="mt-6">
-    <a
-      href="https://bit.ly/4m7b393"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-bold transition"
-    >
-      SHOP NOW
-    </a>
-  </div>
-</div>
-
-{/* FROTH UNIT HOODIE (single image version, styled like tees) */}
-<div className="flex justify-center items-center mb-10 animate-fade-in-up delay-75">
-  <img
-    src="https://i.imgur.com/owQ6XgL.jpeg"
-    alt="Froth Unit Recon Zip Hoodie"
-    className="w-full md:w-2/3 rounded-lg shadow-lg object-contain max-h-[500px] transform transition-transform duration-300 hover:scale-105"
-  />
-</div>
-
-<div className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up delay-100">
-  <p className="mb-4 font-semibold">
-    DCWST “FROTH UNIT” RECON ZIP HOODIE
-  </p>
-  <p className="mb-4">
-    Built for the hood. Designed for the cold.
-  </p>
-  <p className="mb-4">
-    This heavyweight black zip hoodie is more than apparel — it’s a mission statement.
-    Featuring the iconic <strong>"DEEPEST TOOBS WINS"</strong> statement, flanked by the <strong>FROTH UNIT wings</strong>,
-    <strong> TOOB OPS skull patch</strong>, and <strong>DCWST RECON shield</strong>, this design is all grit and cold-water glory.
-  </p>
-  <ul className="list-disc list-inside text-left mb-4">
-    <li>Ultra-soft interior, heavy-duty warmth</li>
-    <li>Full-length zipper with durable pull</li>
-    <li>Premium screen print front and back</li>
-    <li>Mission-ready graphics: Froth Unit Wings, Toob Ops Patch, DCWST Recon Shield</li>
-    <li>Coordinates: N 58°29'51.68" / W 006°16'23.29"</li>
-    <li>www.daisyscoldwatersurfteam.com</li>
-  </ul>
-  <p className="text-sm text-gray-400 italic">
-    RECON ISSUED. DCWST ONLY. The preview shown is only as accurate as monitors allow. The final shirt will differ slightly.
-  </p>
-  <div className="mt-6">
-    <a
-      href="https://bit.ly/4dG4Ixh"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-bold transition"
-    >
-      SHOP NOW
-    </a>
-  </div>
-</div>
-
-      {/* Existing Champions Tee */}
-      <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-10 animate-fade-in-up delay-100">
-        <img
-          src="https://i.imgur.com/rofGcW6.png"
-          alt="Champions Tee Front"
-          className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
-        />
-        <img
-          src="https://i.imgur.com/9xpI9y9.png"
-          alt="Champions Tee Back"
-          className="w-full md:w-1/2 rounded-lg shadow-lg object-cover h-[500px] transform transition-transform duration-300 hover:scale-105"
-        />
-      </div>
-
-      <div className="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
-        <p className="mb-4 font-semibold">
-          SPRING 2025: Daisy’s Cold Water Surf Team Champions Tee
-        </p>
-        <p className="mb-4">
-          This premium white performance tee celebrates the spirit of champions.
-          Featuring a clean, minimalist design, the shirt proudly displays:
-        </p>
-        <ul className="list-disc list-inside text-left mb-4">
-          <li>
-            A gold Surf Team Champions 2025 badge on the upper left chest,
-            symbolizing achievement and dedication.
-          </li>
-          <li>
-            A stylized blue logo on the right chest, adding balance and a modern
-            athletic feel.
-          </li>
-          <li>
-            The Daisy’s Cold Water Surf Team name boldly printed across the
-            front in elegant blue lettering, combining classic surf culture with
-            championship prestige.
-          </li>
-        </ul>
-        <p>
-          Built for surfers and water athletes, this tee merges comfort, style,
-          and inspiration — perfect for wearing on the beach, at competitions, or
-          during everyday adventures.
-        </p>
-      </div>
-
-      {/* Buttons */}
-      <div className="flex flex-col md:flex-row justify-center gap-6 animate-fade-in-up delay-300">
-        <a
-          href="https://bit.ly/4lPxore"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-bold transition"
-        >
-          SHOP ADULTS
-        </a>
-        <a
-          href="https://bit.ly/4d0KRsn"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-bold transition"
-        >
-          SHOP KIDS
-        </a>
-      </div>
+      <div id="collection-component-1749638086992" />
     </section>
   );
 }

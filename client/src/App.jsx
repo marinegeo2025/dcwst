@@ -140,7 +140,7 @@ export default function App() {
     </div>
     <h3 className="text-2xl font-bold mb-2">🧴 OG Cream</h3>
     <p className="text-gray-400 text-base mb-3">
-      Protects skin from cold, wind, and chafing. Wetsuit-safe, petroleum-free, and trusted by hardcore cold-water surfers.
+      Protects skin from cold, wind, and chafing. Wetsuit-safe, organic, natural, FAIRTRADE, the #1 trusted skincare of underground NW Atlantic cold-water surfers.
     </p>
     <span className="inline-block mt-2 px-5 py-2 text-sm font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
       View Product

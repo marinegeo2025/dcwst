@@ -93,29 +93,6 @@ export default function ApparelCarousel() {
         APPAREL
       </h2>
       <div id="collection-component-1749638086992" />
-
-      {/* 🔵 FORCE BLUE BUTTONS + CLEAN SIZING */}
-      <style>{`
-        .shopify-buy__btn {
-          background-color: #287aff !important;
-          border-radius: 15px !important;
-          color: white !important;
-          padding: 12px 24px !important;
-          font-weight: bold;
-        }
-        .shopify-buy__product {
-          max-width: 100%;
-        }
-        .shopify-buy__product__image-wrapper {
-          height: 300px;
-          overflow: hidden;
-        }
-        .shopify-buy__product__image {
-          object-fit: cover;
-          height: 100%;
-          width: 100%;
-        }
-      `}</style>
     </section>
   );
 }

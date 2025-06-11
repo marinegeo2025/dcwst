@@ -19,7 +19,6 @@ export default function ApparelCarousel() {
             product: {
               contents: {
                 img: true,
-                imgWithCarousel: false,
                 title: true,
                 price: true,
                 options: true,
@@ -27,30 +26,31 @@ export default function ApparelCarousel() {
               },
               styles: {
                 product: {
-                  "@media (min-width: 601px)": {
-                    maxWidth: "calc(25% - 20px)",
-                    marginLeft: "20px",
-                    marginBottom: "50px",
-                    width: "calc(25% - 20px)",
-                  },
-                  textAlign: "center",
-                },
-                img: {
-                  height: "auto",
-                  maxHeight: "300px",
-                  objectFit: "cover",
-                },
-                imgWrapper: {
-                  paddingTop: "0px",
-                  height: "auto",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  height: "500px",
+                  margin: "15px",
+                  width: "100%",
+                  maxWidth: "300px",
+                  boxSizing: "border-box",
                 },
                 button: {
-                  backgroundColor: "#287aff",
-                  ":hover": { backgroundColor: "#246ee6" },
-                  ":focus": { backgroundColor: "#246ee6" },
-                  borderRadius: "11px",
+                  backgroundColor: "#287aff !important",
+                  borderRadius: "15px !important",
                   paddingLeft: "45px",
                   paddingRight: "45px",
+                  color: "#fff",
+                },
+                img: {
+                  objectFit: "cover",
+                  height: "auto",
+                  maxHeight: "300px",
+                },
+                imgWrapper: {
+                  height: "300px",
+                  overflow: "hidden",
                 },
               },
               text: {
@@ -60,12 +60,10 @@ export default function ApparelCarousel() {
             productSet: {
               styles: {
                 products: {
-                  display: "flex",
-                  flexWrap: "wrap",
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+                  gap: "20px",
                   justifyContent: "center",
-                  "@media (min-width: 601px)": {
-                    marginLeft: "-20px",
-                  },
                 },
               },
             },
@@ -77,20 +75,12 @@ export default function ApparelCarousel() {
                 buttonWithQuantity: true,
               },
               styles: {
-                product: {
-                  "@media (min-width: 601px)": {
-                    maxWidth: "100%",
-                    marginLeft: "0px",
-                    marginBottom: "0px",
-                  },
-                },
                 button: {
-                  backgroundColor: "#287aff",
-                  ":hover": { backgroundColor: "#246ee6" },
-                  ":focus": { backgroundColor: "#246ee6" },
-                  borderRadius: "11px",
+                  backgroundColor: "#287aff !important",
+                  borderRadius: "15px !important",
                   paddingLeft: "45px",
                   paddingRight: "45px",
+                  color: "#fff",
                 },
               },
               text: {
@@ -100,10 +90,9 @@ export default function ApparelCarousel() {
             cart: {
               styles: {
                 button: {
-                  backgroundColor: "#287aff",
-                  ":hover": { backgroundColor: "#246ee6" },
-                  ":focus": { backgroundColor: "#246ee6" },
-                  borderRadius: "11px",
+                  backgroundColor: "#287aff !important",
+                  borderRadius: "15px !important",
+                  color: "#fff",
                 },
               },
               text: {
@@ -114,9 +103,7 @@ export default function ApparelCarousel() {
             toggle: {
               styles: {
                 toggle: {
-                  backgroundColor: "#287aff",
-                  ":hover": { backgroundColor: "#246ee6" },
-                  ":focus": { backgroundColor: "#246ee6" },
+                  backgroundColor: "#287aff !important",
                 },
               },
             },
@@ -145,8 +132,8 @@ export default function ApparelCarousel() {
   }, []);
 
   return (
-    <section className="py-16 px-6 max-w-7xl mx-auto text-center">
-      <h2 className="text-5xl font-extrabold mb-10 tracking-widest text-white drop-shadow-lg">
+    <section className="bg-[#0d1a26] py-16 px-6 max-w-7xl mx-auto text-center text-white">
+      <h2 className="text-5xl font-extrabold mb-10 tracking-widest drop-shadow-lg">
         APPAREL
       </h2>
       <div id="collection-component-1749638086992" />

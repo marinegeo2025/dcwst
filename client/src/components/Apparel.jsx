@@ -17,6 +17,14 @@ export default function ApparelCarousel() {
           moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
           options: {
             product: {
+              contents: {
+                img: true,
+                imgWithCarousel: false,
+                title: true,
+                price: true,
+                options: true,
+                button: true,
+              },
               styles: {
                 product: {
                   "@media (min-width: 601px)": {
@@ -25,18 +33,16 @@ export default function ApparelCarousel() {
                     marginBottom: "50px",
                     width: "calc(25% - 20px)",
                   },
-                  img: {
-                    height: "calc(100% - 15px)",
-                    position: "absolute",
-                    left: "0",
-                    right: "0",
-                    top: "0",
-                  },
-                  imgWrapper: {
-                    paddingTop: "calc(75% + 15px)",
-                    position: "relative",
-                    height: "0",
-                  },
+                  textAlign: "center",
+                },
+                img: {
+                  height: "auto",
+                  maxHeight: "300px",
+                  objectFit: "cover",
+                },
+                imgWrapper: {
+                  paddingTop: "0px",
+                  height: "auto",
                 },
                 button: {
                   backgroundColor: "#287aff",
@@ -54,6 +60,9 @@ export default function ApparelCarousel() {
             productSet: {
               styles: {
                 products: {
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
                   "@media (min-width: 601px)": {
                     marginLeft: "-20px",
                   },
@@ -62,9 +71,9 @@ export default function ApparelCarousel() {
             },
             modalProduct: {
               contents: {
-                img: false,
+                img: true,
                 imgWithCarousel: true,
-                button: false,
+                button: true,
                 buttonWithQuantity: true,
               },
               styles: {

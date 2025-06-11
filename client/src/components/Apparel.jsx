@@ -1,115 +1,178 @@
-// ApparelSection.jsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-const SHOPIFY_DOMAIN = "dzkc5u-y0.myshopify.com";
-const ACCESS_TOKEN = "42db3ccf256eb2251e6cab35869b8762";
-const COLLECTION_ID = "674511323523"; // numeric ID of your collection
+export default function Apparel() {
+  useEffect(() => {
+    // Only add script if it doesn't already exist
+    if (!document.getElementById("shopify-buy-button-js")) {
+      const script = document.createElement("script");
+      script.src =
+        "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
+      script.async = true;
+      script.id = "shopify-buy-button-js";
+      document.body.appendChild(script);
 
-const query = `
-  query {
-    collection(id: "gid://shopify/Collection/${COLLECTION_ID}") {
-      title
-      description
-      products(first: 12) {
-        edges {
-          node {
-            id
-            title
-            handle
-            description
-            images(first: 1) {
-              edges {
-                node {
-                  url
-                  altText
-                }
-              }
-            }
-            variants(first: 1) {
-              edges {
-                node {
-                  price {
-                    amount
-                  }
-                  id
-                }
-              }
-            }
+      script.onload = () => {
+        if (window.ShopifyBuy) {
+          if (window.ShopifyBuy.UI) {
+            ShopifyBuyInit();
           }
         }
+
+        function ShopifyBuyInit() {
+          const client = window.ShopifyBuy.buildClient({
+            domain: "dzkc5u-y0.myshopify.com",
+            storefrontAccessToken: "42db3ccf256eb2251e6cab35869b8762",
+          });
+          window.ShopifyBuy.UI.onReady(client).then(function (ui) {
+            ui.createComponent("collection", {
+              id: "674511323523",
+              node: document.getElementById("collection-component-1749639978959"),
+              moneyFormat: "%C2%A3%7B%7Bamount%7D%7D",
+              options: {
+                product: {
+                  styles: {
+                    product: {
+                      "@media (min-width: 601px)": {
+                        "max-width": "calc(25% - 20px)",
+                        "margin-left": "20px",
+                        "margin-bottom": "50px",
+                        width: "calc(25% - 20px)",
+                      },
+                      img: {
+                        height: "calc(100% - 15px)",
+                        position: "absolute",
+                        left: "0",
+                        right: "0",
+                        top: "0",
+                      },
+                      imgWrapper: {
+                        "padding-top": "calc(75% + 15px)",
+                        position: "relative",
+                        height: "0",
+                      },
+                    },
+                    button: {
+                      ":hover": {
+                        "background-color": "#246ee6",
+                      },
+                      "background-color": "#287aff",
+                      ":focus": {
+                        "background-color": "#246ee6",
+                      },
+                      "border-radius": "11px",
+                      "padding-left": "45px",
+                      "padding-right": "45px",
+                    },
+                  },
+                  text: {
+                    button: "Add to cart",
+                  },
+                },
+                productSet: {
+                  styles: {
+                    products: {
+                      "@media (min-width: 601px)": {
+                        "margin-left": "-20px",
+                      },
+                    },
+                  },
+                },
+                modalProduct: {
+                  contents: {
+                    img: false,
+                    imgWithCarousel: true,
+                    button: false,
+                    buttonWithQuantity: true,
+                  },
+                  styles: {
+                    product: {
+                      "@media (min-width: 601px)": {
+                        "max-width": "100%",
+                        "margin-left": "0px",
+                        "margin-bottom": "0px",
+                      },
+                    },
+                    button: {
+                      ":hover": {
+                        "background-color": "#246ee6",
+                      },
+                      "background-color": "#287aff",
+                      ":focus": {
+                        "background-color": "#246ee6",
+                      },
+                      "border-radius": "11px",
+                      "padding-left": "45px",
+                      "padding-right": "45px",
+                    },
+                  },
+                  text: {
+                    button: "Add to cart",
+                  },
+                },
+                option: {},
+                cart: {
+                  styles: {
+                    button: {
+                      ":hover": {
+                        "background-color": "#246ee6",
+                      },
+                      "background-color": "#287aff",
+                      ":focus": {
+                        "background-color": "#246ee6",
+                      },
+                      "border-radius": "11px",
+                    },
+                  },
+                  text: {
+                    total: "Subtotal",
+                    button: "Checkout",
+                  },
+                },
+                toggle: {
+                  styles: {
+                    toggle: {
+                      "background-color": "#287aff",
+                      ":hover": {
+                        "background-color": "#246ee6",
+                      },
+                      ":focus": {
+                        "background-color": "#246ee6",
+                      },
+                    },
+                  },
+                },
+              },
+            });
+          });
+        }
+        window.ShopifyBuyInit = ShopifyBuyInit;
+      };
+    } else {
+      // If already loaded, just call the init
+      if (window.ShopifyBuy && window.ShopifyBuy.UI) {
+        window.ShopifyBuyInit && window.ShopifyBuyInit();
       }
     }
-  }
-`;
-
-export default function ApparelSection() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch(`https://${SHOPIFY_DOMAIN}/api/2023-07/graphql.json`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Shopify-Storefront-Access-Token": ACCESS_TOKEN,
-      },
-      body: JSON.stringify({ query }),
-    })
-      .then(res => res.json())
-      .then(res => {
-        setProducts(
-          res.data.collection.products.edges.map(edge => edge.node)
-        );
-        setLoading(false);
-      });
+    // Optional cleanup
+    return () => {
+      const el = document.getElementById(
+        "collection-component-1749639978959"
+      );
+      if (el) el.innerHTML = "";
+    };
   }, []);
 
-  if (loading) {
-    return <div className="py-16 text-center text-xl text-slate-400">Loading Apparel...</div>;
-  }
-
   return (
-    <section className="py-16 bg-black text-white" id="apparel">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-4 tracking-tight animate-fade-in-up">
-          Apparel
-        </h2>
-        <p className="mb-12 text-xl text-slate-300 animate-fade-in-up delay-100">
-          Built for cold water warriors. Heavyweight. Minimalist. Rad.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {products.map((product, idx) => (
-            <div
-              key={product.id}
-              className="bg-slate-900 rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 hover:shadow-2xl transition-all animate-fade-in-up"
-              style={{ animationDelay: `${0.15 * idx}s` }}
-            >
-              <img
-                src={product.images.edges[0]?.node.url}
-                alt={product.images.edges[0]?.node.altText || product.title}
-                className="w-full h-64 object-cover object-center"
-              />
-              <div className="p-6 flex flex-col gap-2">
-                <h3 className="text-2xl font-semibold mb-1">{product.title}</h3>
-                <p className="mb-2 text-slate-400">{product.description}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-xl font-bold">
-                    £{product.variants.edges[0]?.node.price.amount}
-                  </span>
-                  <a
-                    href={`https://${SHOPIFY_DOMAIN}/products/${product.handle}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blue-600 hover:bg-blue-700 transition rounded-xl px-6 py-2 text-white font-semibold shadow"
-                  >
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+    <section className="py-16 px-6 max-w-6xl mx-auto text-center">
+      {/* Heading and subheading */}
+      <h2 className="text-5xl font-extrabold mb-4 tracking-widest text-white drop-shadow-lg animate-fade-in-up">
+        APPAREL
+      </h2>
+      <p className="mb-10 text-lg text-slate-200">
+        Built for cold water warriors. Heavyweight. Minimalist. Rad.
+      </p>
+      {/* Shopify Collection Buy Button */}
+      <div id="collection-component-1749639978959"></div>
     </section>
   );
 }

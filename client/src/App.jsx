@@ -188,7 +188,7 @@ export default function App() {
     </div>
     <h3 className="text-2xl font-bold mb-2">🧠 BodyBlueprint AI</h3>
     <p className="text-gray-400 text-base mb-3">
-      Agentic personalized training, nutrition, and mindset powered by Ai and AL. A personalized training tool to enable you to become the best you can be.
+      Agentic hyper-personalized training, nutrition, and mindset. 100 % science based. Built by AL, powered by Ai. This app empowers you to achieve your optimum physical aesthetic potential.
     </p>
     <span className="inline-block mt-2 px-5 py-2 text-sm font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
       Visit BodyBlueprint AI

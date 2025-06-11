@@ -25,18 +25,20 @@ export default function Apparel() {
           });
           window.ShopifyBuy.UI.onReady(client).then(function (ui) {
             ui.createComponent("collection", {
-              id: "674511323523",
-              node: document.getElementById("collection-component-1749639978959"),
+              id: "674511323523", // same as your export
+              node: document.getElementById(
+                "collection-component-1749640702150"
+              ),
               moneyFormat: "%C2%A3%7B%7Bamount%7D%7D",
               options: {
                 product: {
                   styles: {
                     product: {
                       "@media (min-width: 601px)": {
-                        "max-width": "calc(25% - 20px)",
-                        "margin-left": "20px",
+                        "max-width": "calc(50% - 40px)",
+                        "margin-left": "40px",
                         "margin-bottom": "50px",
-                        width: "calc(25% - 20px)",
+                        width: "calc(50% - 40px)",
                       },
                       img: {
                         height: "calc(100% - 15px)",
@@ -51,6 +53,9 @@ export default function Apparel() {
                         height: "0",
                       },
                     },
+                    title: {
+                      color: "#ffffff",
+                    },
                     button: {
                       ":hover": {
                         "background-color": "#246ee6",
@@ -63,6 +68,15 @@ export default function Apparel() {
                       "padding-left": "45px",
                       "padding-right": "45px",
                     },
+                    price: {
+                      color: "#ffffff",
+                    },
+                    compareAt: {
+                      color: "#ffffff",
+                    },
+                    unitPrice: {
+                      color: "#ffffff",
+                    },
                   },
                   text: {
                     button: "Add to cart",
@@ -72,7 +86,7 @@ export default function Apparel() {
                   styles: {
                     products: {
                       "@media (min-width: 601px)": {
-                        "margin-left": "-20px",
+                        "margin-left": "-40px",
                       },
                     },
                   },
@@ -103,6 +117,30 @@ export default function Apparel() {
                       "border-radius": "11px",
                       "padding-left": "45px",
                       "padding-right": "45px",
+                    },
+                    title: {
+                      "font-family": "Helvetica Neue, sans-serif",
+                      "font-weight": "bold",
+                      "font-size": "26px",
+                      color: "#4c4c4c",
+                    },
+                    price: {
+                      "font-family": "Helvetica Neue, sans-serif",
+                      "font-weight": "normal",
+                      "font-size": "18px",
+                      color: "#4c4c4c",
+                    },
+                    compareAt: {
+                      "font-family": "Helvetica Neue, sans-serif",
+                      "font-weight": "normal",
+                      "font-size": "15.3px",
+                      color: "#4c4c4c",
+                    },
+                    unitPrice: {
+                      "font-family": "Helvetica Neue, sans-serif",
+                      "font-weight": "normal",
+                      "font-size": "15.3px",
+                      color: "#4c4c4c",
                     },
                   },
                   text: {
@@ -148,7 +186,6 @@ export default function Apparel() {
         window.ShopifyBuyInit = ShopifyBuyInit;
       };
     } else {
-      // If already loaded, just call the init
       if (window.ShopifyBuy && window.ShopifyBuy.UI) {
         window.ShopifyBuyInit && window.ShopifyBuyInit();
       }
@@ -156,7 +193,7 @@ export default function Apparel() {
     // Optional cleanup
     return () => {
       const el = document.getElementById(
-        "collection-component-1749639978959"
+        "collection-component-1749640702150"
       );
       if (el) el.innerHTML = "";
     };
@@ -172,7 +209,7 @@ export default function Apparel() {
         Built for cold water warriors. Heavyweight. Minimalist. Rad.
       </p>
       {/* Shopify Collection Buy Button */}
-      <div id="collection-component-1749639978959"></div>
+      <div id="collection-component-1749640702150"></div>
     </section>
   );
 }

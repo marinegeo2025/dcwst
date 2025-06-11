@@ -148,7 +148,7 @@ export default function App() {
         </a>
 
         <a
-          href="/sfsw.html"
+          href="https://store.daisyscoldwatersurfteam.com/products/soul-fire-surf-wax"
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackProductClick("Soul Fire Surf Wax")}
@@ -192,30 +192,7 @@ export default function App() {
           <span className="inline-block mt-2 px-4 py-2 text-xs font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
             Visit BodyBlueprint AI
           </span>
-        </a>
-
-        <a
-          href="https://alz.bigcartel.com/product/genki-cbd-cream"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackProductClick("Genki CBD Cream")}
-          className="group block bg-gray-900 p-6 rounded-xl shadow-md transition transform duration-300 hover:scale-105 hover:rotate-1 hover:animate-pro-pulse"
-        >
-          <div className="flex justify-center mb-4">
-  <img
-    src="https://i.imgur.com/AVpVqq4.png"
-    alt="GENKI CBD Cream"
-    className="w-16 h-16 rounded-full object-cover shadow-lg"
-  />
-</div>
-<h3 className="text-xl font-bold mb-2">🌿 GENKI CBD Cream</h3>
-<p className="text-gray-400 text-sm mb-3">
-  Sustained Pain Relief. Empowered Recovery. Shea Butter + CBD.
-</p>
-<span className="inline-block mt-2 px-4 py-2 text-xs font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
-  Shop GENKI CBD Cream
-</span>
-</a>
+        </a>      
 </section>
 
 <Apparel />

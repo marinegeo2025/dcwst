@@ -164,7 +164,7 @@ export default function App() {
     </div>
     <h3 className="text-2xl font-bold mb-2">🔥 Soul Fire Surf Wax</h3>
     <p className="text-gray-400 text-base mb-3">
-      Cold-temperature traction straight outta the hardcore Scottish surfing underground.
+      Cold-water traction straight outta the hardcore Scottish surfing underground.
     </p>
     <span className="inline-block mt-2 px-5 py-2 text-sm font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
       View Soul Fire Surf Wax
@@ -188,7 +188,7 @@ export default function App() {
     </div>
     <h3 className="text-2xl font-bold mb-2">🧠 BodyBlueprint AI</h3>
     <p className="text-gray-400 text-base mb-3">
-      Personalized training, nutrition, and mindset powered by AI.
+      Agentic personalized training, nutrition, and mindset powered by Ai and AL. A personalized training tool to enable you to become the best you can be.
     </p>
     <span className="inline-block mt-2 px-5 py-2 text-sm font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
       Visit BodyBlueprint AI

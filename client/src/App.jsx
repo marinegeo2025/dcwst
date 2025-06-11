@@ -122,77 +122,78 @@ export default function App() {
 
 
       {/* Product Cards */}
-      <section className="px-6 py-12 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        <a
-          href="https://daisyscoldwatersurfcream.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackProductClick("OG Cream")}
-          className="group block bg-gray-900 p-6 rounded-xl shadow-md transition transform duration-300 hover:scale-105 hover:rotate-1 hover:animate-pro-pulse"
-        >
-          <div className="flex justify-center mb-4">
-            <img
-              src="https://i.imgur.com/QPo6eGM.png"
-              alt="OG Cream"
-              className="w-16 h-16 rounded-full object-cover shadow-lg group-hover:ring-4 group-hover:ring-sky-400 group-hover:ring-opacity-50"
-            />
-          </div>
-          <h3 className="text-xl font-bold mb-2">🧴 OG Cream</h3>
-          <p className="text-gray-400 text-sm mb-3">
-            Protects skin from cold, wind, and chafing. Wetsuit-safe,
-            petroleum-free, and trusted by hardcore cold-water surfers.
-          </p>
-          <span className="inline-block mt-2 px-4 py-2 text-xs font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
-            View Product
-          </span>
-        </a>
+      <section className="px-6 py-12 max-w-7xl mx-auto flex flex-wrap justify-center gap-10 text-center">
+  {/* OG Cream */}
+  <a
+    href="https://daisyscoldwatersurfcream.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={() => trackProductClick("OG Cream")}
+    className="group block bg-gray-900 p-8 w-[310px] rounded-2xl shadow-lg transition transform duration-300 hover:scale-110 hover:rotate-1 hover:animate-pro-pulse"
+  >
+    <div className="flex justify-center mb-6">
+      <img
+        src="https://i.imgur.com/QPo6eGM.png"
+        alt="OG Cream"
+        className="w-20 h-20 rounded-full object-cover shadow-lg group-hover:ring-4 group-hover:ring-sky-400 group-hover:ring-opacity-50"
+      />
+    </div>
+    <h3 className="text-2xl font-bold mb-2">🧴 OG Cream</h3>
+    <p className="text-gray-400 text-base mb-3">
+      Protects skin from cold, wind, and chafing. Wetsuit-safe, petroleum-free, and trusted by hardcore cold-water surfers.
+    </p>
+    <span className="inline-block mt-2 px-5 py-2 text-sm font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
+      View Product
+    </span>
+  </a>
 
-        <a
-          href="https://store.daisyscoldwatersurfteam.com/products/soul-fire-surf-wax"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackProductClick("Soul Fire Surf Wax")}
-          className="group block bg-gray-900 p-6 rounded-xl shadow-md transition transform duration-300 hover:scale-105 hover:rotate-1 hover:animate-pro-pulse"
-        >
-          <div className="flex justify-center mb-4">
-            <img
-              src="https://i.imgur.com/MtwQeB8.png"
-              alt="Soul Fire Surf Wax"
-              className="w-16 h-16 rounded-full object-cover shadow-lg"
-            />
-          </div>
-          <h3 className="text-xl font-bold mb-2">🔥 Soul Fire Surf Wax</h3>
-          <p className="text-gray-400 text-sm mb-3">
-            Cold-temperature traction straight outta the hardcore Scottish
-            surfing underground.
-          </p>
-          <span className="inline-block mt-2 px-4 py-2 text-xs font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
-            View Soul Fire Surf Wax
-          </span>
-        </a>
+  {/* Soul Fire Surf Wax */}
+  <a
+    href="https://store.daisyscoldwatersurfteam.com/products/soul-fire-surf-wax"
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={() => trackProductClick("Soul Fire Surf Wax")}
+    className="group block bg-gray-900 p-8 w-[310px] rounded-2xl shadow-lg transition transform duration-300 hover:scale-110 hover:rotate-1 hover:animate-pro-pulse"
+  >
+    <div className="flex justify-center mb-6">
+      <img
+        src="https://i.imgur.com/MtwQeB8.png"
+        alt="Soul Fire Surf Wax"
+        className="w-20 h-20 rounded-full object-cover shadow-lg"
+      />
+    </div>
+    <h3 className="text-2xl font-bold mb-2">🔥 Soul Fire Surf Wax</h3>
+    <p className="text-gray-400 text-base mb-3">
+      Cold-temperature traction straight outta the hardcore Scottish surfing underground.
+    </p>
+    <span className="inline-block mt-2 px-5 py-2 text-sm font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
+      View Soul Fire Surf Wax
+    </span>
+  </a>
 
-        <a
-          href="https://www.bodyblueprintai.life/?v=2"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => trackProductClick("BodyBlueprint AI")}
-          className="group block bg-gray-900 p-6 rounded-xl shadow-md transition transform duration-300 hover:scale-105 hover:rotate-1 hover:animate-pro-pulse"
-        >
-          <div className="flex justify-center mb-4">
-            <img
-              src="https://i.imgur.com/w4tG6W4.png"
-              alt="BodyBlueprint AI"
-              className="w-16 h-16 rounded-full object-cover shadow-lg"
-            />
-          </div>
-          <h3 className="text-xl font-bold mb-2">🧠 BodyBlueprint AI</h3>
-          <p className="text-gray-400 text-sm mb-3">
-            Personalized training, nutrition, and mindset powered by AI.
-          </p>
-          <span className="inline-block mt-2 px-4 py-2 text-xs font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
-            Visit BodyBlueprint AI
-          </span>
-        </a>      
+  {/* BodyBlueprint AI */}
+  <a
+    href="https://www.bodyblueprintai.life/?v=2"
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={() => trackProductClick("BodyBlueprint AI")}
+    className="group block bg-gray-900 p-8 w-[310px] rounded-2xl shadow-lg transition transform duration-300 hover:scale-110 hover:rotate-1 hover:animate-pro-pulse"
+  >
+    <div className="flex justify-center mb-6">
+      <img
+        src="https://i.imgur.com/w4tG6W4.png"
+        alt="BodyBlueprint AI"
+        className="w-20 h-20 rounded-full object-cover shadow-lg"
+      />
+    </div>
+    <h3 className="text-2xl font-bold mb-2">🧠 BodyBlueprint AI</h3>
+    <p className="text-gray-400 text-base mb-3">
+      Personalized training, nutrition, and mindset powered by AI.
+    </p>
+    <span className="inline-block mt-2 px-5 py-2 text-sm font-semibold text-sky-400 border border-sky-400 rounded-full hover:bg-sky-400 hover:text-black transition duration-300">
+      Visit BodyBlueprint AI
+    </span>
+  </a>
 </section>
 
 <Apparel />

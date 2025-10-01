@@ -4,104 +4,104 @@
     "name": "Katy",
     "country": "Kernow",
     "points": 3500,
-    "image": "https://i.imgur.com/FareQro.png"
+    "image": "/images/FareQro.png"
   },
   {
     "id": 2,
     "name": "Aidan",
     "country": "Scotland",
     "points": 2000,
-    "image": "https://i.imgur.com/i6ItwtT.png"
+    "image": "/images/i6ItwtT.png"
   },
   {
     "id": 3,
     "name": "Charlie",
     "country": "Scotland",
     "points": 2000,
-    "image": "https://i.imgur.com/i6ItwtT.png"
+    "image": "/images/i6ItwtT.png"
   },
   {
     "id": 4,
     "name": "Ollie",
     "country": "Wales",
     "points": 1500,
-    "image": "https://i.imgur.com/JaNLxEg.png"
+    "image": "/images/JaNLxEg.png"
   },
   {
     "id": 5,
     "name": "Greg",
     "country": "Wales",
     "points": 1000,
-    "image": "https://i.imgur.com/JaNLxEg.png"
+    "image": "/images/JaNLxEg.png"
   },
   {
     "id": 6,
     "name": "Murph",
     "country": "USA",
     "points": 1000,
-    "image": "https://i.imgur.com/2i4TdsK.png"
+    "image": "/images/2i4TdsK.png"
   },
-   {
+  {
     "id": 7,
     "name": "Luca",
     "country": "Wales",
     "points": 500,
-    "image": "https://i.imgur.com/JaNLxEg.png"
+    "image": "/images/JaNLxEg.png"
   },
   {
     "id": 8,
     "name": "Hugh",
     "country": "Ireland",
     "points": 500,
-    "image": "https://i.imgur.com/6xU18QK.png"
+    "image": "/images/6xU18QK.png"
   },
   {
     "id": 9,
     "name": "Ivana",
     "country": "Scotland",
     "points": 500,
-    "image": "https://i.imgur.com/i6ItwtT.png"
+    "image": "/images/i6ItwtT.png"
   },
   {
     "id": 10,
     "name": "Jacob",
     "country": "South Africa",
     "points": 500,
-    "image": "https://i.imgur.com/HBmYavm.png"
+    "image": "/images/HBmYavm.png"
   },
   {
     "id": 11,
     "name": "Rhyan",
     "country": "Scotland",
     "points": 500,
-    "image": "https://i.imgur.com/i6ItwtT.png"
+    "image": "/images/i6ItwtT.png"
   },
   {
     "id": 12,
     "name": "Jamie",
     "country": "Scotland",
     "points": 500,
-    "image": "https://i.imgur.com/i6ItwtT.png"
+    "image": "/images/i6ItwtT.png"
   },
   {
     "id": 13,
     "name": "Julia",
     "country": "Netherlands",
     "points": 500,
-    "image": "https://i.imgur.com/eOfrJk9.png"
+    "image": "/images/eOfrJk9.png"
   },
   {
     "id": 14,
     "name": "Kenneth",
     "country": "USA",
     "points": 500,
-    "image": "https://i.imgur.com/2i4TdsK.png"
+    "image": "/images/2i4TdsK.png"
   },
   {
     "id": 15,
     "name": "AL",
     "country": "Eilean Siar",
     "points": 60,
-    "image": "https://i.imgur.com/wjTFfpI.png"
+    "image": "/images/wjTFfpI.png"
   }
 ]

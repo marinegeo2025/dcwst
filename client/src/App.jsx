@@ -82,7 +82,7 @@ export default function App() {
               className="focus:outline-none"
             >
               <img
-                src="https://i.imgur.com/DQFuK1x.png"
+                src="/images/DQFuK1x.png"
                 alt="Daisy's Cold Water Surf Team"
                 className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover shadow-lg border-4 border-sky-400 transition duration-300 hover:scale-110 hover:shadow-[0_0_30px_8px_rgba(56,189,248,0.6)] animate-pulse-soft"
               />

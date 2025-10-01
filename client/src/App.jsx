@@ -133,7 +133,7 @@ export default function App() {
   >
     <div className="flex justify-center mb-6">
       <img
-        src="https://i.imgur.com/QPo6eGM.png"
+        src="/images/QPo6eGM.png"
         alt="OG Cream"
         className="w-20 h-20 rounded-full object-cover shadow-lg group-hover:ring-4 group-hover:ring-sky-400 group-hover:ring-opacity-50"
       />
@@ -157,7 +157,7 @@ export default function App() {
   >
     <div className="flex justify-center mb-6">
       <img
-        src="https://i.imgur.com/MtwQeB8.png"
+        src="/images/MtwQeB8.png"
         alt="Soul Fire Surf Wax"
         className="w-20 h-20 rounded-full object-cover shadow-lg"
       />
@@ -181,7 +181,7 @@ export default function App() {
   >
     <div className="flex justify-center mb-6">
       <img
-        src="https://i.imgur.com/w4tG6W4.png"
+        src="/images/w4tG6W4.png"
         alt="BodyBlueprint AI"
         className="w-20 h-20 rounded-full object-cover shadow-lg"
       />

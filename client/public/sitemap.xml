@@ -13,44 +13,4 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Clann na Mara project -->
-  <url>
-    <loc>https://daisyscoldwatersurfteam.com/clann-na-mara.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Soul Fire Surf Wax -->
-  <url>
-    <loc>https://daisyscoldwatersurfteam.com/sfsw.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Competitions -->
-  <url>
-    <loc>https://daisyscoldwatersurfteam.com/competitions.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Leaderboard -->
-  <url>
-    <loc>https://daisyscoldwatersurfteam.com/leaderboard.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Wholesale -->
-  <url>
-    <loc>https://daisyscoldwatersurfteam.com/wholesale.html</loc>
-    <lastmod>2025-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
 </urlset>

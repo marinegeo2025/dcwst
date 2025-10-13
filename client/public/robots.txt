@@ -1,0 +1,15 @@
+# robots.txt for https://www.daisyscoldwatersurfteam.com
+
+User-agent: *
+Allow: /
+
+# Block internal assets and admin endpoints
+Disallow: /api/
+Disallow: /admin/
+Disallow: /server/
+Disallow: /dist/
+Disallow: /seed.js
+Disallow: /test.html
+
+# Sitemap location (optional but recommended)
+Sitemap: https://www.daisyscoldwatersurfteam.com/sitemap.xml
